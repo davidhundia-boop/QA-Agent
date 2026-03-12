@@ -1,0 +1,17 @@
+# Android App QA Tools - Python Dependencies
+#
+# Install with: pip install -r requirements.txt
+# For full functionality, also run: playwright install chromium
+
+# Core dependencies (required)
+androguard>=3.4.0
+beautifulsoup4>=4.12.0
+google-play-scraper>=1.2.0
+lxml>=4.9.0
+requests>=2.31.0
+
+# Optional: for JavaScript-rendered pages and Data Safety scraping
+playwright>=1.40.0
+
+# Optional: for better logging in play_integrity_analyzer
+loguru>=0.7.0

@@ -26,7 +26,6 @@ Usage:
 import sys
 import os
 import zipfile
-import re
 import json
 import struct
 import io
@@ -169,7 +168,7 @@ class PlayIntegrityAnalyzer:
 
     def analyze(self):
         print(f"\n{'='*70}")
-        print(f"  Play Integrity & App Protection Analyzer v4")
+        print("  Play Integrity & App Protection Analyzer v4")
         print(f"  APK: {self.apk_name}")
         print(f"  Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"{'='*70}\n")
@@ -324,7 +323,7 @@ class PlayIntegrityAnalyzer:
             if len(evidence) > 5:
                 print(f"        ... and {len(evidence)-5} more")
         else:
-            print(f"      [OK] No pairip / Auto Protect found")
+            print("      [OK] No pairip / Auto Protect found")
 
     # ------------------------------------------------------------------
     # Step 2: Play Integrity API  (WARNING)
@@ -374,7 +373,7 @@ class PlayIntegrityAnalyzer:
             for ev in evidence[:5]:
                 print(f"        - {ev}")
         else:
-            print(f"      [OK] No Play Integrity API found")
+            print("      [OK] No Play Integrity API found")
 
     # ------------------------------------------------------------------
     # Step 3: Legacy Play Licensing
@@ -410,9 +409,9 @@ class PlayIntegrityAnalyzer:
             for ev in evidence[:5]:
                 print(f"        - {ev}")
         elif has_manifest_permission:
-            print(f"      [OK] Legacy Play Licensing (CHECK_LICENSE in manifest but no DEX evidence)")
+            print("      [OK] Legacy Play Licensing (CHECK_LICENSE in manifest but no DEX evidence)")
         else:
-            print(f"      [OK] No Legacy Play Licensing (LVL)")
+            print("      [OK] No Legacy Play Licensing (LVL)")
 
     # ------------------------------------------------------------------
     # Verdict
@@ -502,14 +501,14 @@ class PlayIntegrityAnalyzer:
 
         if self.extraction_errors:
             print(f"  {'-'*66}")
-            print(f"  [!] Extraction issues:")
+            print("  [!] Extraction issues:")
             for err in self.extraction_errors:
                 print(f"    - {err}")
             print()
 
         if self.results["fail"]:
             print(f"  {'-'*66}")
-            print(f"  [FAIL] Will block DT preloads:")
+            print("  [FAIL] Will block DT preloads:")
             print(f"  {'-'*66}")
             for item in self.results["fail"]:
                 print(f"\n    * {item['name']}")
@@ -523,7 +522,7 @@ class PlayIntegrityAnalyzer:
 
         if self.results["warning"]:
             print(f"\n  {'-'*66}")
-            print(f"  [WARNING] Needs manual verification:")
+            print("  [WARNING] Needs manual verification:")
             print(f"  {'-'*66}")
             for item in self.results["warning"]:
                 print(f"\n    * {item['name']}")
@@ -621,7 +620,7 @@ def analyze_directory(directory):
               for v in ("FAIL", "WARNING", "PASS", "INCONCLUSIVE")}
 
     print(f"\n{'='*70}")
-    print(f"  BATCH SUMMARY")
+    print("  BATCH SUMMARY")
     print(f"{'='*70}")
     print(f"  Total APKs:  {len(all_results)}")
     for label in ("FAIL", "WARNING", "PASS", "INCONCLUSIVE"):
@@ -640,7 +639,7 @@ def analyze_directory(directory):
 
     inconclusive = [r for r in all_results if r["verdict"] == "INCONCLUSIVE"]
     if inconclusive:
-        print(f"\n  INCONCLUSIVE APKs:")
+        print("\n  INCONCLUSIVE APKs:")
         for r in inconclusive:
             print(f"    [????] {r['apk']} -- manual testing required")
 
