@@ -1,0 +1,50 @@
+{
+  "apk": "base.apk",
+  "package": "com.sofi.mobile",
+  "app_name": "SoFi",
+  "verdict": "FAIL",
+  "fail_count": 1,
+  "warning_count": 1,
+  "dex_string_count": 359054,
+  "extraction_errors": [],
+  "play_integrity_detected": true,
+  "details": {
+    "fail": [
+      {
+        "id": "pairip_auto_protect",
+        "name": "Auto Protect (pairip)",
+        "evidence_count": 40,
+        "evidence": [
+          "DEX: 'com/pairip' in 'Lcom/pairip/Utils$1;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda4;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient;'",
+          "DEX: 'com/pairip' in '[Lcom/pairip/licensecheck/LicenseActivity$ActivityType;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda7;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/VMRunner$1;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseActivity$$ExternalSyntheticLambda2;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseActivity$$ExternalSyntheticLambda0;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/SignatureCheck$SignatureTamperedException;'",
+          "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/ResponseValidator;'"
+        ],
+        "description": "Google injects the pairip library at Play Console upload time. It blocks ALL non-Play installs including Digital Turbine. The developer must disable Auto Protection in Play Console and upload a new build."
+      }
+    ],
+    "warning": [
+      {
+        "id": "play_integrity_api",
+        "name": "Play Integrity API",
+        "evidence_count": 6,
+        "evidence": [
+          "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityServiceCallback'",
+          "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/bp;'",
+          "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+          "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+          "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$StandardIntegrityTokenRequest$Builder;'",
+          "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+        ],
+        "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+      }
+    ]
+  },
+  "analyzed_at": "2026-03-16T15:24:48.202745"
+}
