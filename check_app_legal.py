@@ -635,7 +635,6 @@ def probe_subpages(session: requests.Session, base_url: str,
                 continue
 
             probe_body = resp.text
-            probe_len = len(probe_body)
 
             # Soft-404 / SPA detection: compare content against homepage
             if home_len > 0:
@@ -832,12 +831,12 @@ def check_app(package_name: str, session: requests.Session, *,
             if scan_url == dev_url:
                 result.website_accessible = accessible
             # Merge without duplicates
-            existing = {l.url for l in result.tc_links}
-            result.tc_links.extend(l for l in tc if l.url not in existing)
-            existing = {l.url for l in result.pp_links_on_site}
-            result.pp_links_on_site.extend(l for l in pp if l.url not in existing)
-            existing = {l.url for l in result.other_legal_links}
-            result.other_legal_links.extend(l for l in other if l.url not in existing)
+            existing = {link.url for link in result.tc_links}
+            result.tc_links.extend(link for link in tc if link.url not in existing)
+            existing = {link.url for link in result.pp_links_on_site}
+            result.pp_links_on_site.extend(link for link in pp if link.url not in existing)
+            existing = {link.url for link in result.other_legal_links}
+            result.other_legal_links.extend(link for link in other if link.url not in existing)
             result.notes.extend(crawl_notes)
 
         # 2b — Playwright JS fallback (if no legal links found)
@@ -850,15 +849,15 @@ def check_app(package_name: str, session: requests.Session, *,
                         tc, pp, other = _extract_links_from_soup(
                             soup, scan_url, "JS rendered",
                         )
-                        existing = {l.url for l in result.tc_links}
+                        existing = {link.url for link in result.tc_links}
                         result.tc_links.extend(
-                            l for l in tc if l.url not in existing)
-                        existing = {l.url for l in result.pp_links_on_site}
+                            link for link in tc if link.url not in existing)
+                        existing = {link.url for link in result.pp_links_on_site}
                         result.pp_links_on_site.extend(
-                            l for l in pp if l.url not in existing)
-                        existing = {l.url for l in result.other_legal_links}
+                            link for link in pp if link.url not in existing)
+                        existing = {link.url for link in result.other_legal_links}
                         result.other_legal_links.extend(
-                            l for l in other if l.url not in existing)
+                            link for link in other if link.url not in existing)
                         if result.tc_links or result.pp_links_on_site:
                             break
             else:
@@ -875,8 +874,8 @@ def check_app(package_name: str, session: requests.Session, *,
                 session, result.developer_website, verbose,
             )
             result.notes.extend(probe_notes)
-            existing_tc = {l.url for l in result.tc_links}
-            existing_pp = {l.url for l in result.pp_links_on_site}
+            existing_tc = {link.url for link in result.tc_links}
+            existing_pp = {link.url for link in result.pp_links_on_site}
             for link in probed:
                 low = link.url.lower()
                 if any(k in low for k in ("term", "tos", "eula", "legal")):
@@ -897,7 +896,7 @@ def check_app(package_name: str, session: requests.Session, *,
         all_links = result.tc_links + result.pp_links_on_site + result.other_legal_links
         verify_links(session, all_links, verbose)
 
-        broken = [l for l in result.tc_links if l.verified is False]
+        broken = [link for link in result.tc_links if link.verified is False]
         if broken:
             result.notes.append(
                 f"{len(broken)} T&C link(s) failed verification (may be broken)"
@@ -990,10 +989,10 @@ def print_result(result: LegalCheckResult):
     ds = result.data_safety
     if ds is not None:
         ds_map = {
-            "COMPLETE":    ("\u2705",       "Complete"),
-            "NO_DATA":     ("\u26a0\ufe0f", "No data declared"),
-            "MISSING":     ("\u274c",       "Missing"),
-            "PARSE_ERROR": ("\u274c",       "Parse error"),
+            "COMPLETE": ("\u2705", "Complete"),
+            "NO_DATA": ("\u26a0\ufe0f", "No data declared"),
+            "MISSING": ("\u274c", "Missing"),
+            "PARSE_ERROR": ("\u274c", "Parse error"),
         }
         ds_icon, ds_detail = ds_map.get(ds.status, ("\u274c", "Error"))
     else:
@@ -1004,9 +1003,9 @@ def print_result(result: LegalCheckResult):
     W1, W2 = 13, 6
     W3 = max(20, max(len(d) for _, _, d in rows))
 
-    def _sep(l, m, r):
-        return (f"  {l}{'─' * (W1 + 2)}{m}"
-                f"{'─' * (W2 + 2)}{m}{'─' * (W3 + 2)}{r}")
+    def _sep(left, mid, right):
+        return (f"  {left}{'─' * (W1 + 2)}{mid}"
+                f"{'─' * (W2 + 2)}{mid}{'─' * (W3 + 2)}{right}")
 
     def _row(c1, c2, c3):
         return (f"  │ {_vpad(c1, W1)} │ "
@@ -1128,8 +1127,8 @@ def print_summary_table(results: list[LegalCheckResult]):
     widths = [NW, AW, PW, TW, DW, RW]
     headers = ["#", "App", "PP", "T&C", "Data Safety", "Rating"]
 
-    def _sep(l, m, r):
-        return "  " + l + m.join("\u2500" * (w + 2) for w in widths) + r
+    def _sep(left, mid, right):
+        return "  " + left + mid.join("\u2500" * (w + 2) for w in widths) + right
 
     def _row(cells):
         parts = [f" {_vpad(c, w)} " for c, w in zip(cells, widths)]
@@ -1190,7 +1189,7 @@ def export_csv(results: list[LegalCheckResult], path: str):
                 r.privacy_policy_verdict,
                 r.privacy_policy_url or "",
                 r.tc_verdict,
-                " | ".join(l.url for l in r.tc_links),
+                " | ".join(link.url for link in r.tc_links),
                 ds.status if ds else "SKIPPED",
                 collected_str,
                 shared_str,
