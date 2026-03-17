@@ -1341,6 +1341,7 @@ def analyze_apk(apk_path: str) -> dict:
         "inheritance_chain": chain_java,
         "wake_lock_detected": is_flagged,
         "confidence": confidence,
+        "tier": overall_tier,
         "needs_manual_review": "Yes" if needs_manual_review else "No",
         "flag_reasons": unique,
         "doubt_reasons": doubt_reasons,

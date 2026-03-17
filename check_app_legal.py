@@ -635,7 +635,6 @@ def probe_subpages(session: requests.Session, base_url: str,
                 continue
 
             probe_body = resp.text
-            probe_len = len(probe_body)
 
             # Soft-404 / SPA detection: compare content against homepage
             if home_len > 0:
