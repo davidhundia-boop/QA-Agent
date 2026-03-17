@@ -1,0 +1,3 @@
+# APK files (large binaries)
+*.apk
+qa_analysis/*.apk
