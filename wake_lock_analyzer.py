@@ -1258,13 +1258,11 @@ def analyze_apk(apk_path: str) -> dict:
         is_flagged = False
         confidence = "high"
         needs_manual_review = False
-        overall_tier = None
     else:
         ti = TIER_INFO[best_tier]
         is_flagged = ti["is_flagged"]
         confidence = ti["confidence"]
         needs_manual_review = ti["needs_manual_review"]
-        overall_tier = best_tier
 
     # Build doubt_reasons list
     doubt_reasons: list[str] = []
