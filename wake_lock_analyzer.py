@@ -35,6 +35,37 @@ STOP_SUPERCLASSES = frozenset(
     }
 )
 
+# Game engine runtime packages — treated as functionally first-party.
+# The game IS the engine runtime; wake locks here are session-wide.
+GAME_ENGINE_PACKAGES = [
+    "com.unity3d.player",       # Unity Java runtime (UnityPlayer, UnityPlayerActivity)
+    "com.epicgames.ue4",        # Unreal Engine 4
+    "com.unrealengine",         # Unreal Engine (alt package)
+    "org.cocos2dx",             # Cocos2d-x
+    "org.libgdx",               # libGDX
+    "io.flutter",               # Flutter engine
+    "com.google.androidgamesdk",# Google Android Game SDK
+]
+
+# Known advertising SDK packages — wake locks here are scoped to ad video playback.
+# IMPORTANT: com.unity3d.ads (ad SDK) is separate from com.unity3d.player (game engine).
+AD_SDK_PACKAGES = [
+    "com.applovin",
+    "com.fyber",
+    "com.mintegral",
+    "com.ironsource",
+    "com.unity3d.ads",          # Unity Ads SDK — NOT the same as com.unity3d.player
+    "com.google.android.gms.ads",
+    "com.facebook.ads",
+    "com.vungle",
+    "com.chartboost",
+    "com.inmobi",
+    "com.startapp",
+    "com.tapjoy",
+    "io.bidmachine",
+    "com.bytedance.sdk",
+]
+
 WINDOW_SIZE = 15
 
 # ── 5-tier confidence system ─────────────────────────────────────────────────
@@ -77,10 +108,37 @@ _VID_TIER_APP = {
     "setScreenOnWhilePlaying": 4, "screen_off_timeout_i": 3, "screen_off_timeout_s": 3,
 }
 
+# Maps vector method_sig → tier for Phase A-engine (game engine classes)
+_SIG_TIER_ENGINE = {
+    "Window;->addFlags": 2,
+    "View;->setKeepScreenOn": 2,
+    "PowerManager;->newWakeLock": 2,
+    "MediaPlayer;->setScreenOnWhilePlaying": 4,
+    "Settings$System;->put": 3,
+}
+
+# Maps vector ID → tier for raw-DEX Phase A-engine
+_VID_TIER_ENGINE = {
+    "addFlags": 2, "setKeepScreenOn": 2, "newWakeLock": 2,
+    "setScreenOnWhilePlaying": 4, "screen_off_timeout_i": 3, "screen_off_timeout_s": 3,
+}
+
+# Tier map for known ad SDKs (all vectors → Tier 5)
+_VID_TIER_ADSDK: dict[str, int] = {vid: 5 for vid in _VID_TIER_APP}
+
 
 def _tier_note(vec_key: str, tier: int, cls_name: str = "") -> str | None:
     """Return the human-readable note for a given vector+tier, or None."""
     if tier == 1:
+        return None
+    if tier == 2:
+        # cls_name is Java-format here; check against engine package prefixes
+        if any(cls_name.startswith(pkg) for pkg in GAME_ENGINE_PACKAGES):
+            return (
+                "Game engine runtime class — functionally first-party. "
+                "Unity/Unreal/etc. keep-screen-on is session-wide, not "
+                "scoped to ad playback."
+            )
         return None
     if tier == 5:
         return (
@@ -124,6 +182,28 @@ def to_dalvik(java_name: str) -> str:
 
 def from_dalvik(dalvik_name: str) -> str:
     return dalvik_name.lstrip("L").rstrip(";").replace("/", ".")
+
+
+def is_game_engine_class(dalvik_name: str) -> bool:
+    """True if the class belongs to a known game engine runtime package."""
+    java_name = from_dalvik(dalvik_name)
+    return any(
+        java_name == pkg or java_name.startswith(pkg + ".")
+        for pkg in GAME_ENGINE_PACKAGES
+    )
+
+
+def is_ad_sdk_class(dalvik_name: str) -> bool:
+    """True if the class belongs to a known advertising SDK package.
+
+    Uses full prefix matching to avoid conflating e.g. com.unity3d.ads
+    (ad SDK) with com.unity3d.player (game engine).
+    """
+    java_name = from_dalvik(dalvik_name)
+    return any(
+        java_name == pkg or java_name.startswith(pkg + ".")
+        for pkg in AD_SDK_PACKAGES
+    )
 
 
 # ── Low-level DEX format utilities ───────────────────────────────────────────
@@ -721,18 +801,6 @@ def resolve_activity_name(raw: str, package: str) -> str:
     return raw
 
 
-def is_app_owned_activity(dalvik_name: str, package: str) -> bool:
-    """True if the class likely belongs to the app itself (not a third-party SDK).
-
-    Uses the app's package name as a prefix.  Also treats the main activity's
-    engine frameworks (cocos2dx, unity3d, etc.) as app-owned since they form the
-    app's own activity hierarchy — but those are already covered by Phase A,
-    so here we only need the package-prefix check.
-    """
-    java_name = from_dalvik(dalvik_name)
-    return java_name.startswith(package)
-
-
 # ── Inheritance chain ────────────────────────────────────────────────────────
 
 
@@ -1082,8 +1150,17 @@ def analyze_apk(apk_path: str) -> dict:
     all_findings: list[dict] = []
     scanned_classes: set[str] = set()
 
-    # Phase A: full androguard parse of the DEX files containing the chain
+    # Collect all game-engine classes present in the DEX hierarchy.
+    # These are always scanned regardless of manifest declarations because
+    # the game runtime IS the app — wake locks here are session-wide.
+    engine_class_names: set[str] = {
+        cls for cls in hierarchy if is_game_engine_class(cls)
+    }
+
+    # Phase A: full androguard parse of DEX files containing the main-activity
+    # inheritance chain AND the game-engine classes.
     phase_a_dex = {class_to_dex[d] for d in inheritance_chain if d in class_to_dex}
+    phase_a_dex.update(class_to_dex[d] for d in engine_class_names if d in class_to_dex)
     class_map = selective_full_parse(dex_blobs, phase_a_dex)
 
     for dalvik_name in inheritance_chain:
@@ -1093,31 +1170,70 @@ def analyze_apk(apk_path: str) -> dict:
         scanned_classes.add(dalvik_name)
         all_findings.extend(scan_class_androguard(cls, _SIG_TIER_MAIN))
 
-    # Phase A+: Unity IL2CPP metadata scan (if Phase A bytecode found nothing)
+    # Phase A-engine: scan every game-engine class at Tier 2.
+    # Runs unconditionally — engine classes are functionally first-party.
+    for dalvik_name in sorted(engine_class_names):
+        if dalvik_name in scanned_classes:
+            continue
+        cls = class_map.get(dalvik_name)
+        if cls is None:
+            continue
+        scanned_classes.add(dalvik_name)
+        all_findings.extend(scan_class_androguard(cls, _SIG_TIER_ENGINE))
+
+    # Phase A+: Unity IL2CPP metadata scan (if Phase A + A-engine found nothing)
     if not all_findings:
         all_findings.extend(scan_unity_il2cpp(apk, inheritance_chain))
 
-    # Phase B: targeted raw-DEX scan of manifest activities
+    # Phase B: targeted raw-DEX scan of manifest activities + keyword classes
     if not all_findings:
-        other_activities = [d for d in all_activities_dalvik if d not in scanned_classes]
-        app_activities = [d for d in other_activities if is_app_owned_activity(d, package)]
-        sdk_activities = [d for d in other_activities if not is_app_owned_activity(d, package)]
+        # Classes with wake-lock-relevant keywords in their simple class name
+        keyword_names = frozenset(["Player", "Activity", "Application", "Service", "WakeLock"])
+        keyword_classes: set[str] = {
+            cls for cls in hierarchy
+            if any(kw in from_dalvik(cls).split(".")[-1] for kw in keyword_names)
+            and cls not in scanned_classes
+            and not is_game_engine_class(cls)   # already handled in Phase A-engine
+        }
 
-        sdk_vid_tier = {vid: 5 for vid in _VID_TIER_APP}
+        other_activities = [d for d in all_activities_dalvik if d not in scanned_classes]
+        expanded_b: set[str] = set(other_activities) | keyword_classes
+
+        # Three-bucket classification per spec:
+        #   App package  → Tier 3 (non-main app code)
+        #   Engine       → Tier 2 (should already be empty after Phase A-engine)
+        #   Ad SDK       → Tier 5
+        #   Unknown      → Tier 3 (needs manual review)
+        app_b: list[str] = []
+        engine_b: list[str] = []
+        ad_sdk_b: list[str] = []
+        unknown_b: list[str] = []
+        for d in expanded_b:
+            java_name = from_dalvik(d)
+            if java_name.startswith(package):
+                app_b.append(d)
+            elif is_game_engine_class(d):
+                engine_b.append(d)
+            elif is_ad_sdk_class(d):
+                ad_sdk_b.append(d)
+            else:
+                unknown_b.append(d)
 
         for vid_map, tier_list in [
-            (_VID_TIER_APP, app_activities),
-            (sdk_vid_tier, sdk_activities),
+            (_VID_TIER_APP, app_b),
+            (_VID_TIER_ENGINE, engine_b),   # safety fallback; normally empty
+            (_VID_TIER_ADSDK, ad_sdk_b),
+            (_VID_TIER_APP, unknown_b),     # unknown third-party → Tier 3
         ]:
-            dex_to_activities: dict[int, list[str]] = {}
+            dex_to_classes: dict[int, list[str]] = {}
             for d in tier_list:
                 idx = class_to_dex.get(d)
                 if idx is not None:
-                    dex_to_activities.setdefault(idx, []).append(d)
+                    dex_to_classes.setdefault(idx, []).append(d)
 
-            for dex_idx in sorted(dex_to_activities):
+            for dex_idx in sorted(dex_to_classes):
                 _, blob = dex_blobs[dex_idx]
-                target_names = set(dex_to_activities[dex_idx])
+                target_names = set(dex_to_classes[dex_idx])
                 hits, scanned_b = scan_dex_targeted(
                     blob, target_names, hierarchy, vid_map
                 )
