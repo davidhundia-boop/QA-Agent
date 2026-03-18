@@ -9,6 +9,7 @@ No external binaries needed (no apkeep, no cargo, no Rust).
 import os
 import tempfile
 import glob
+import zipfile
 from urllib.parse import urlparse, parse_qs
 
 
@@ -75,7 +76,7 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
                 with open(download_path, 'rb') as f:
                     magic = f.read(2)
                 if magic == b'PK':
-                    return os.path.abspath(download_path)
+                    return ensure_apk(os.path.abspath(download_path))
                 else:
                     os.remove(download_path)
                     raise RuntimeError("Downloaded file is not a valid APK")
@@ -99,7 +100,7 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
             # apkeep may create files with various naming patterns
             apk_files = glob.glob(os.path.join(output_dir, '*.apk'))
             if apk_files:
-                return apk_files[0]
+                return ensure_apk(apk_files[0])
     except FileNotFoundError:
         pass  # apkeep not installed
     except Exception as e:
@@ -134,7 +135,7 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
             with open(output_path, 'rb') as f:
                 magic = f.read(2)
             if magic == b'PK':
-                return output_path
+                return ensure_apk(output_path)
             else:
                 os.remove(output_path)
     except Exception as e:
@@ -185,3 +186,70 @@ def fetch_apks_bulk(package_names: list, output_dir: str = None,
         progress_callback(total, total, "Done")
     
     return results
+
+
+def ensure_apk(file_path: str) -> str:
+    """
+    If the file is a standard APK, return it as-is.
+    If it's an XAPK (split APK bundle), extract the base APK and return that.
+
+    Returns path to a usable .apk file.
+    """
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+
+    if not zipfile.is_zipfile(file_path):
+        raise RuntimeError(f"Not a valid APK or XAPK file: {file_path}")
+
+    with zipfile.ZipFile(file_path, 'r') as zf:
+        file_list = zf.namelist()
+
+        # Regular APK — has DEX at the top level
+        if 'classes.dex' in file_list:
+            return file_path
+
+        # XAPK — contains inner .apk files
+        inner_apks = [f for f in file_list if f.endswith('.apk')]
+
+        if not inner_apks:
+            raise RuntimeError(
+                f"File is a ZIP but contains no APKs or DEX files. "
+                f"Contents: {file_list[:10]}"
+            )
+
+        # Strategy 1: base.apk (most common XAPK layout)
+        base_apk = None
+        if 'base.apk' in inner_apks:
+            base_apk = 'base.apk'
+
+        # Strategy 2: single non-config APK
+        if not base_apk:
+            non_config = [
+                f for f in inner_apks
+                if not f.startswith('config.') and not f.startswith('split_config.')
+            ]
+            if len(non_config) == 1:
+                base_apk = non_config[0]
+
+        # Strategy 3: largest APK
+        if not base_apk:
+            apk_sizes = [(name, zf.getinfo(name).file_size) for name in inner_apks]
+            apk_sizes.sort(key=lambda x: x[1], reverse=True)
+            base_apk = apk_sizes[0][0]
+
+        # Extract
+        output_dir = os.path.dirname(file_path)
+        extracted_path = os.path.join(output_dir, f"base_{os.path.basename(base_apk)}")
+
+        with zf.open(base_apk) as src, open(extracted_path, 'wb') as dst:
+            dst.write(src.read())
+
+        if zipfile.is_zipfile(extracted_path):
+            with zipfile.ZipFile(extracted_path, 'r') as inner_zf:
+                if 'classes.dex' in inner_zf.namelist():
+                    return extracted_path
+
+        raise RuntimeError(
+            f"Extracted {base_apk} from XAPK but it doesn't contain classes.dex. "
+            f"The app may use an unusual packaging format."
+        )
