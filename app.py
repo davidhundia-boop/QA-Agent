@@ -336,6 +336,8 @@ with tab_single:
                 with st.spinner("Analyzing…"):
                     analysis, _ = run_analyzer(apk_path)
                     result.update(analysis)
+                    # restore scraper values (analyzer may write 'unknown')
+                    result["package"]  = package_name
                     result["app_name"] = meta["title"]
                     result["icon"]     = meta.get("icon")
 
@@ -450,7 +452,6 @@ with tab_bulk:
                         r.update({"input": original, "app_name": meta["title"],
                                   "icon": meta.get("icon"), "package": pkg})
                     except Exception as exc:
-                        meta = get_app_metadata(pkg) if pkg else {"title": original}
                         r = {
                             "input": original, "package": pkg or original,
                             "app_name": meta["title"], "verdict": "ERROR",
