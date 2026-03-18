@@ -1,0 +1,11 @@
+# Core analyzer dependency
+androguard>=4.1.2
+
+# Streamlit screener UI
+streamlit
+google-play-scraper
+pandas
+
+# System dependency (not pip-installable):
+#   apkeep — cargo install apkeep
+#   OR download binary: https://github.com/EFForg/apkeep/releases
