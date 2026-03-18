@@ -1,0 +1,4 @@
+
+# APK files used for QA analysis
+qa_output/*.apk
+qa_output/*.apks
