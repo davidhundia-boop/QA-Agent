@@ -1,9 +1,14 @@
 # Core analyzer dependency
 androguard>=4.1.2
 
-# Streamlit screener UI
-streamlit
+# APK downloader
+apkpure
 requests
 beautifulsoup4
+tqdm
+cloudscraper
+
+# Streamlit screener UI
+streamlit
 google-play-scraper
 pandas

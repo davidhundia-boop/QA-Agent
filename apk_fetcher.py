@@ -1,188 +1,187 @@
 """
-APK fetcher helper for Play Integrity Screener.
-Pure-Python downloader — no external binaries required.
+APK Fetcher — downloads APKs from APKPure using the 'apkpure' pip package.
 
-Download chain (tried in order):
-  1. APKPure direct download endpoint
-  2. APKCombo direct download endpoint
-  3. APKPure scraping (search → app page → download link)
+Install:  pip install apkpure requests beautifulsoup4 tqdm cloudscraper
 
-All methods share a requests.Session with a browser User-Agent.
+No external binaries needed (no apkeep, no cargo, no Rust).
 """
 
 import os
-import re
 import tempfile
-from urllib.parse import parse_qs, urljoin, urlparse
+import glob
+from urllib.parse import urlparse, parse_qs
 
-import requests
-
-_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "en-US,en;q=0.9",
-}
-
-
-# ============================================================================
-# Public API
-# ============================================================================
 
 def extract_package_name(input_str: str) -> str:
     """
+    Extract package name from a Play Store URL or bare package name.
+    
     Accepts:
-    - Full Play Store URL: https://play.google.com/store/apps/details?id=com.example.app
-    - URL with extra params: ...?id=com.example.app&hl=en
-    - Bare package name: com.example.app
-
-    Returns the package name. Raises ValueError if unrecognized.
+      - https://play.google.com/store/apps/details?id=com.example.app
+      - https://play.google.com/store/apps/details?id=com.example.app&hl=en
+      - play.google.com/store/apps/details?id=com.example.app
+      - com.example.app
     """
     input_str = input_str.strip()
-
-    if "play.google.com" in input_str:
+    
+    # Handle URLs
+    if 'play.google.com' in input_str:
+        # Add scheme if missing
+        if not input_str.startswith('http'):
+            input_str = 'https://' + input_str
         parsed = urlparse(input_str)
         params = parse_qs(parsed.query)
-        if "id" in params:
-            return params["id"][0]
-        raise ValueError(f"No 'id' parameter found in Play Store URL: {input_str}")
-
-    # Bare package name: contains dots, no spaces
-    if "." in input_str and " " not in input_str:
+        if 'id' in params:
+            return params['id'][0]
+        raise ValueError(f"No 'id' parameter found in URL: {input_str}")
+    
+    # Handle bare package name (contains dots, no spaces, no slashes)
+    if '.' in input_str and ' ' not in input_str and '/' not in input_str:
         return input_str
-
+    
     raise ValueError(
-        f"Unrecognized input: {input_str!r}\n"
-        "Expected a Google Play Store URL or a package name like com.example.app"
+        f"Unrecognized input: '{input_str}'. "
+        f"Paste a Google Play URL or a package name like 'com.example.app'"
     )
 
 
-def fetch_apk(package_name: str, output_dir: str) -> str:
+def fetch_apk(package_name: str, output_dir: str = None) -> str:
     """
-    Download an APK for *package_name* into *output_dir*.
-
-    Tries three sources in order. Returns the local .apk path on success.
-    Raises RuntimeError with a helpful message (including a manual download
-    link) if all methods fail.
+    Download the latest APK for the given package name from APKPure.
+    
+    Returns the path to the downloaded APK file.
+    Raises RuntimeError if download fails.
     """
-    output_path = os.path.join(output_dir, f"{package_name}.apk")
-    session = requests.Session()
-    session.headers.update(_HEADERS)
-
-    errors: list[str] = []
-
-    # ── Method 1: APKPure direct endpoint ────────────────────────────────────
+    if output_dir is None:
+        output_dir = tempfile.mkdtemp(prefix="apk_")
+    
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # ── Method 1: apkpure pip package ──────────────────────────────────
     try:
+        from apkpure.apkpure import ApkPure
+        
+        api = ApkPure()
+        
+        # download() takes the package name or search term
+        # It downloads to current working directory by default
+        original_cwd = os.getcwd()
+        os.chdir(output_dir)
+        
+        try:
+            download_path = api.download(package_name)
+            if download_path and os.path.exists(download_path):
+                # Verify it's a valid ZIP/APK
+                with open(download_path, 'rb') as f:
+                    magic = f.read(2)
+                if magic == b'PK':
+                    return os.path.abspath(download_path)
+                else:
+                    os.remove(download_path)
+                    raise RuntimeError("Downloaded file is not a valid APK")
+        finally:
+            os.chdir(original_cwd)
+            
+    except ImportError:
+        pass  # apkpure not installed, try next method
+    except Exception as e:
+        # Log but don't fail — try fallback
+        print(f"[apkpure package] Failed: {e}")
+    
+    # ── Method 2: apkeep binary (if available) ─────────────────────────
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['apkeep', '-a', package_name, output_dir],
+            capture_output=True, text=True, timeout=120
+        )
+        if result.returncode == 0:
+            # apkeep may create files with various naming patterns
+            apk_files = glob.glob(os.path.join(output_dir, '*.apk'))
+            if apk_files:
+                return apk_files[0]
+    except FileNotFoundError:
+        pass  # apkeep not installed
+    except Exception as e:
+        print(f"[apkeep] Failed: {e}")
+    
+    # ── Method 3: Direct APKPure URL attempt ───────────────────────────
+    try:
+        import requests
+        
+        headers = {
+            'User-Agent': (
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                'AppleWebKit/537.36 (KHTML, like Gecko) '
+                'Chrome/122.0.0.0 Safari/537.36'
+            )
+        }
+        
+        # APKPure direct download endpoint
         url = f"https://d.apkpure.com/b/APK/{package_name}?version=latest"
-        if _download_and_verify(session, url, output_path):
-            return output_path
-        errors.append("APKPure direct: response was not a valid APK")
-    except Exception as exc:
-        errors.append(f"APKPure direct: {exc}")
-
-    # ── Method 2: APKCombo direct endpoint ───────────────────────────────────
-    try:
-        url = f"https://download.apkcombo.com/apk/{package_name}"
-        if _download_and_verify(session, url, output_path):
-            return output_path
-        errors.append("APKCombo direct: response was not a valid APK")
-    except Exception as exc:
-        errors.append(f"APKCombo direct: {exc}")
-
-    # ── Method 3: APKPure scraping ────────────────────────────────────────────
-    try:
-        dl_url = _scrape_apkpure(session, package_name)
-        if dl_url and _download_and_verify(session, dl_url, output_path):
-            return output_path
-        errors.append("APKPure scrape: download link found but file was not a valid APK")
-    except Exception as exc:
-        errors.append(f"APKPure scrape: {exc}")
-
-    # ── All methods failed ────────────────────────────────────────────────────
-    error_detail = "\n".join(f"  • {e}" for e in errors)
+        resp = requests.get(url, headers=headers, allow_redirects=True, 
+                          timeout=60, stream=True)
+        
+        content_type = resp.headers.get('content-type', '')
+        if resp.status_code == 200 and ('octet-stream' in content_type or 
+                                         'apk' in content_type or
+                                         'application' in content_type):
+            output_path = os.path.join(output_dir, f"{package_name}.apk")
+            with open(output_path, 'wb') as f:
+                for chunk in resp.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            
+            with open(output_path, 'rb') as f:
+                magic = f.read(2)
+            if magic == b'PK':
+                return output_path
+            else:
+                os.remove(output_path)
+    except Exception as e:
+        print(f"[direct download] Failed: {e}")
+    
+    # ── All methods failed ─────────────────────────────────────────────
     raise RuntimeError(
-        f"Could not auto-download APK for '{package_name}'.\n\n"
-        f"Attempted sources:\n{error_detail}\n\n"
-        f"Download manually and use the 'Upload APK' option:\n"
-        f"  https://apkpure.com/search?q={package_name}"
+        f"Could not download APK for '{package_name}'.\n\n"
+        f"All download methods failed. You can:\n"
+        f"1. Download manually from https://apkpure.com/search?q={package_name}\n"
+        f"2. Use the 'Upload APK' option below\n"
+        f"3. Install the apkpure package: pip install apkpure"
     )
 
 
-# ============================================================================
-# Internal helpers
-# ============================================================================
-
-def _download_and_verify(session: requests.Session, url: str, dest: str) -> bool:
+def fetch_apks_bulk(package_names: list, output_dir: str = None,
+                     progress_callback=None) -> dict:
     """
-    Stream-download *url* to *dest*. Return True if the result is a valid APK
-    (ZIP magic bytes PK). Delete *dest* and return False otherwise.
+    Download multiple APKs. Returns dict of results:
+    {
+        "com.example.app": {"status": "success", "path": "/tmp/.../app.apk"},
+        "com.other.app": {"status": "failed", "error": "..."},
+    }
     """
-    resp = session.get(url, allow_redirects=True, timeout=60, stream=True)
-    if resp.status_code != 200:
-        return False
-
-    content_type = resp.headers.get("content-type", "")
-    # Accept application/* or octet-stream; reject obvious HTML/JSON errors
-    if "text/html" in content_type or "application/json" in content_type:
-        return False
-
-    with open(dest, "wb") as fh:
-        for chunk in resp.iter_content(chunk_size=65536):
-            fh.write(chunk)
-
-    # Verify ZIP magic bytes (APK = ZIP)
-    with open(dest, "rb") as fh:
-        magic = fh.read(2)
-
-    if magic == b"PK":
-        return True
-
-    os.remove(dest)
-    return False
-
-
-def _scrape_apkpure(session: requests.Session, package_name: str) -> str | None:
-    """
-    Scrape APKPure to find a direct download URL for *package_name*.
-    Returns the download URL string, or None if not found.
-    """
-    from bs4 import BeautifulSoup
-
-    # Step 1: search
-    search_url = f"https://apkpure.net/search?q={package_name}"
-    resp = session.get(search_url, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    # Find first result link whose href contains the package name
-    app_path: str | None = None
-    for a in soup.find_all("a", href=True):
-        href: str = a["href"]
-        if package_name in href and "/download" not in href:
-            # Normalise to absolute
-            app_path = href if href.startswith("http") else urljoin("https://apkpure.net", href)
-            break
-
-    if not app_path:
-        return None
-
-    # Step 2: app download page
-    dl_page_url = app_path.rstrip("/") + "/download"
-    resp = session.get(dl_page_url, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    # Look for the primary download anchor
-    for selector in [
-        {"id": "download_link"},
-        {"class": re.compile(r"download", re.I)},
-        {"href": re.compile(r"\.apk", re.I)},
-    ]:
-        tag = soup.find("a", selector)
-        if tag and tag.get("href"):
-            href = tag["href"]
-            return href if href.startswith("http") else urljoin(dl_page_url, href)
-
-    return None
+    import time
+    
+    if output_dir is None:
+        output_dir = tempfile.mkdtemp(prefix="apk_bulk_")
+    
+    results = {}
+    total = len(package_names)
+    
+    for i, pkg in enumerate(package_names):
+        if progress_callback:
+            progress_callback(i, total, pkg)
+        
+        try:
+            apk_path = fetch_apk(pkg, output_dir)
+            results[pkg] = {"status": "success", "path": apk_path}
+        except Exception as e:
+            results[pkg] = {"status": "failed", "error": str(e)}
+        
+        # Rate limit between downloads
+        if i < total - 1:
+            time.sleep(2)
+    
+    if progress_callback:
+        progress_callback(total, total, "Done")
+    
+    return results
