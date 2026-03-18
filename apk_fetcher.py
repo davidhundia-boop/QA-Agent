@@ -48,68 +48,55 @@ def extract_package_name(input_str: str) -> str:
 
 def fetch_apk(package_name: str, output_dir: str = None) -> str:
     """
-    Download the latest APK for the given package name from APKPure.
-    
-    Returns the path to the downloaded APK file.
-    Raises RuntimeError if download fails.
+    Download the latest APK for the given package name.
+    Tries four strategies in order, falling back gracefully on each failure.
+
+    Returns the path to a usable .apk file (XAPK bundles are unpacked automatically).
+    Raises RuntimeError with a full error log if all strategies fail.
     """
     if output_dir is None:
         output_dir = tempfile.mkdtemp(prefix="apk_")
-    
     os.makedirs(output_dir, exist_ok=True)
-    
-    # ── Method 1: apkpure pip package ──────────────────────────────────
+
+    errors = []
+
+    # ── Strategy 1: apkpure pip package — search by package name ───────
     try:
         from apkpure.apkpure import ApkPure
-        
         api = ApkPure()
-        
-        # download() takes the package name or search term
-        # It downloads to current working directory by default
         original_cwd = os.getcwd()
         os.chdir(output_dir)
-        
         try:
-            download_path = api.download(package_name)
-            if download_path and os.path.exists(download_path):
-                # Verify it's a valid ZIP/APK
-                with open(download_path, 'rb') as f:
-                    magic = f.read(2)
-                if magic == b'PK':
-                    return ensure_apk(os.path.abspath(download_path))
-                else:
-                    os.remove(download_path)
-                    raise RuntimeError("Downloaded file is not a valid APK")
+            path = api.download(package_name)
+            if path and os.path.exists(path):
+                return ensure_apk(os.path.abspath(path))
         finally:
             os.chdir(original_cwd)
-            
-    except ImportError:
-        pass  # apkpure not installed, try next method
     except Exception as e:
-        # Log but don't fail — try fallback
-        print(f"[apkpure package] Failed: {e}")
-    
-    # ── Method 2: apkeep binary (if available) ─────────────────────────
+        errors.append(f"apkpure (package name): {e}")
+
+    # ── Strategy 2: apkpure pip package — search by app title ──────────
     try:
-        import subprocess
-        result = subprocess.run(
-            ['apkeep', '-a', package_name, output_dir],
-            capture_output=True, text=True, timeout=120
-        )
-        if result.returncode == 0:
-            # apkeep may create files with various naming patterns
-            apk_files = glob.glob(os.path.join(output_dir, '*.apk'))
-            if apk_files:
-                return ensure_apk(apk_files[0])
-    except FileNotFoundError:
-        pass  # apkeep not installed
+        from google_play_scraper import app as gplay_app
+        info = gplay_app(package_name)
+        app_title = info.get('title', '')
+        if app_title:
+            from apkpure.apkpure import ApkPure
+            api = ApkPure()
+            original_cwd = os.getcwd()
+            os.chdir(output_dir)
+            try:
+                path = api.download(app_title)
+                if path and os.path.exists(path):
+                    return ensure_apk(os.path.abspath(path))
+            finally:
+                os.chdir(original_cwd)
     except Exception as e:
-        print(f"[apkeep] Failed: {e}")
-    
-    # ── Method 3: Direct APKPure URL attempt ───────────────────────────
+        errors.append(f"apkpure (app title): {e}")
+
+    # ── Strategy 3: APKPure direct download URL (APK + XAPK) ───────────
     try:
         import requests
-        
         headers = {
             'User-Agent': (
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
@@ -117,37 +104,48 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
                 'Chrome/122.0.0.0 Safari/537.36'
             )
         }
-        
-        # APKPure direct download endpoint
-        url = f"https://d.apkpure.com/b/APK/{package_name}?version=latest"
-        resp = requests.get(url, headers=headers, allow_redirects=True, 
-                          timeout=60, stream=True)
-        
-        content_type = resp.headers.get('content-type', '')
-        if resp.status_code == 200 and ('octet-stream' in content_type or 
-                                         'apk' in content_type or
-                                         'application' in content_type):
-            output_path = os.path.join(output_dir, f"{package_name}.apk")
-            with open(output_path, 'wb') as f:
-                for chunk in resp.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            
-            with open(output_path, 'rb') as f:
-                magic = f.read(2)
-            if magic == b'PK':
-                return ensure_apk(output_path)
-            else:
-                os.remove(output_path)
+        for fmt in ['APK', 'XAPK']:
+            url = f"https://d.apkpure.com/b/{fmt}/{package_name}?version=latest"
+            resp = requests.get(url, headers=headers, allow_redirects=True,
+                                timeout=60, stream=True)
+            content_type = resp.headers.get('content-type', '')
+            if resp.status_code == 200 and (
+                'octet-stream' in content_type or 'application' in content_type
+            ):
+                ext = '.xapk' if fmt == 'XAPK' else '.apk'
+                output_path = os.path.join(output_dir, f"{package_name}{ext}")
+                with open(output_path, 'wb') as f:
+                    for chunk in resp.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                if os.path.getsize(output_path) > 1000:
+                    return ensure_apk(output_path)
+                else:
+                    os.remove(output_path)
     except Exception as e:
-        print(f"[direct download] Failed: {e}")
-    
-    # ── All methods failed ─────────────────────────────────────────────
+        errors.append(f"direct URL: {e}")
+
+    # ── Strategy 4: apkeep binary (if installed) ────────────────────────
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['apkeep', '-a', package_name, output_dir],
+            capture_output=True, text=True, timeout=120
+        )
+        if result.returncode == 0:
+            apk_files = glob.glob(os.path.join(output_dir, '*.apk'))
+            if apk_files:
+                return ensure_apk(apk_files[0])
+    except FileNotFoundError:
+        pass
+    except Exception as e:
+        errors.append(f"apkeep: {e}")
+
+    # ── All strategies failed ───────────────────────────────────────────
     raise RuntimeError(
-        f"Could not download APK for '{package_name}'.\n\n"
-        f"All download methods failed. You can:\n"
-        f"1. Download manually from https://apkpure.com/search?q={package_name}\n"
-        f"2. Use the 'Upload APK' option below\n"
-        f"3. Install the apkpure package: pip install apkpure"
+        f"Could not download APK for '{package_name}'.\n"
+        f"Tried: {'; '.join(errors)}\n\n"
+        f"Download manually from https://apkpure.com/search?q={package_name} "
+        f"and use the file upload option."
     )
 
 
