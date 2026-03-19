@@ -137,19 +137,16 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
 
         scraper = cloudscraper.create_scraper()
 
-        # Try the standard APKPure app page and look for a download link
         page_url = f"https://apkpure.com/search?q={package_name}"
         resp = scraper.get(page_url, timeout=30)
         if resp.status_code == 200:
             soup = BeautifulSoup(resp.text, "html.parser")
-            # Find the link to the app's detail page matching our package
             app_link = soup.find("a", href=lambda h: h and package_name in h)
             if app_link:
                 detail_url = app_link["href"]
                 if not detail_url.startswith("http"):
                     detail_url = "https://apkpure.com" + detail_url
 
-                # Visit the download variant page
                 for suffix in ["/download", "/downloading"]:
                     dl_page = scraper.get(detail_url + suffix, timeout=30)
                     if dl_page.status_code == 200:
@@ -337,13 +334,33 @@ def ensure_apk(file_path: str) -> str:
             if len(non_config) == 1:
                 base_apk = non_config[0]
 
-        # Strategy 3: largest APK
+        # Strategy 3: find the APK that actually contains classes.dex
+        # (handles Unity games where asset packs are larger than the base)
+        if not base_apk:
+            output_dir_tmp = os.path.dirname(file_path)
+            for candidate in inner_apks:
+                candidate_path = os.path.join(output_dir_tmp, f"_probe_{os.path.basename(candidate)}")
+                try:
+                    with zf.open(candidate) as src, open(candidate_path, 'wb') as dst:
+                        dst.write(src.read())
+                    if zipfile.is_zipfile(candidate_path):
+                        with zipfile.ZipFile(candidate_path, 'r') as inner_zf:
+                            if 'classes.dex' in inner_zf.namelist():
+                                base_apk = candidate
+                                os.remove(candidate_path)
+                                break
+                    os.remove(candidate_path)
+                except Exception:
+                    if os.path.exists(candidate_path):
+                        os.remove(candidate_path)
+
+        # Strategy 4: largest APK (last resort)
         if not base_apk:
             apk_sizes = [(name, zf.getinfo(name).file_size) for name in inner_apks]
             apk_sizes.sort(key=lambda x: x[1], reverse=True)
             base_apk = apk_sizes[0][0]
 
-        # Extract
+        # Extract the chosen APK
         output_dir = os.path.dirname(file_path)
         extracted_path = os.path.join(output_dir, f"base_{os.path.basename(base_apk)}")
 
@@ -357,5 +374,6 @@ def ensure_apk(file_path: str) -> str:
 
         raise RuntimeError(
             f"Extracted {base_apk} from XAPK but it doesn't contain classes.dex. "
+            f"Inner APKs found: {inner_apks}. "
             f"The app may use an unusual packaging format."
         )
