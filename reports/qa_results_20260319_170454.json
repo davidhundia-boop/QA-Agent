@@ -1,0 +1,1335 @@
+[
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/944f6190-aeeb-4cd6-afdc-755c900390c4.apks",
+    "filename": "944f6190-aeeb-4cd6-afdc-755c900390c4.apks",
+    "file_type": "apks",
+    "file_size_mb": 385.35,
+    "package_name": "com.playrix.township",
+    "app_name": "Township",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/movieplayer.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/movieplayer.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/a3c24336-03cf-4407-9563-e6a982ab6fab.apks",
+    "filename": "a3c24336-03cf-4407-9563-e6a982ab6fab.apks",
+    "file_type": "apks",
+    "file_size_mb": 52.41,
+    "package_name": "com.newleaf.app.android.victor",
+    "app_name": "ReelShort",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.newleaf.app.android.victor.hall.MainActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.newleaf.app.android.victor.hall.MainActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.newleaf.app.android.victor.player.view.EpisodePlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.newleaf.app.android.victor.player.view.EpisodePlayerActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.mediation.hybridAds.b.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivity.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivity \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/83584140-7ac5-496e-8085-b7949c7a30e1.apk",
+    "filename": "83584140-7ac5-496e-8085-b7949c7a30e1.apk",
+    "file_type": "apk",
+    "file_size_mb": 5.71,
+    "package_name": "com.coolniks.niksgps",
+    "app_name": "Speedometer",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.coolniks.niksgps.SettingsActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.SettingsActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.CategoryRecordsActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.CategoryRecordsActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.CompassActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.CompassActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.DetailActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.DetailActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.HelpActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.HelpActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.MainActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.MainActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.RecordsActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.RecordsActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.ThemeActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.ThemeActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.coolniks.niksgps.TroubleshootingActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.coolniks.niksgps.TroubleshootingActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/be86c1df-9ca7-4f88-8657-1b3edbc0408f.apk",
+    "filename": "be86c1df-9ca7-4f88-8657-1b3edbc0408f.apk",
+    "file_type": "apk",
+    "file_size_mb": 149.72,
+    "package_name": "slots.pcg.casino.games.free.android",
+    "app_name": "Cash Frenzy\u2122",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "PowerManager.newWakeLock(SCREEN_*)",
+        "PowerManager.newWakeLock(SCREEN_*)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in org.cocos2dx.lua.AppActivity.onCreateView() invokes PowerManager.newWakeLock() with matching constant in preceding 15-instruction window. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps. | Dalvik bytecode in org.cocos2dx.lua.AppActivity.onResume() invokes PowerManager.newWakeLock() with matching constant in preceding 15-instruction window. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps. | Dalvik bytecode in org.cocos2dx.bole.BoleJavaUtil$1.run() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/65e0af0c-4e10-4a7b-b844-01686239744a.apks",
+    "filename": "65e0af0c-4e10-4a7b-b844-01686239744a.apks",
+    "file_type": "apks",
+    "file_size_mb": 77.89,
+    "package_name": "com.roasup.blockhitpuzzlegame",
+    "app_name": "Block Hit",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.P.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/ad3a3b0a-b955-44d6-9a45-4752f308614d.apks",
+    "filename": "ad3a3b0a-b955-44d6-9a45-4752f308614d.apks",
+    "file_type": "apks",
+    "file_size_mb": 148.04,
+    "package_name": "com.king.petrescuesaga",
+    "app_name": "Pet Rescue Saga",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in com.king.main.EngineActivity.lambda$setKeepScreenOn$5() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Dalvik bytecode in com.king.main.EngineActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/b46170ee-5e04-4083-84ce-b6e33fe4bfee.apks",
+    "filename": "b46170ee-5e04-4083-84ce-b6e33fe4bfee.apks",
+    "file_type": "apks",
+    "file_size_mb": 54.57,
+    "package_name": "com.fp.cheapoair",
+    "app_name": "CheapOair",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [],
+      "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": []
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/dc58a6de-e820-4bc4-9f77-bf15ac0999ae.apk",
+    "filename": "dc58a6de-e820-4bc4-9f77-bf15ac0999ae.apk",
+    "file_type": "apk",
+    "file_size_mb": 745.37,
+    "package_name": "com.szckhd.jwgly.azyw",
+    "app_name": "BeTheKing",
+    "play_integrity": {
+      "verdict": "FAIL",
+      "fail_reasons": [
+        "Legacy Play Licensing (LVL)"
+      ],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "FAIL",
+    "qa_notes": [
+      "Play Integrity FAIL: Legacy Play Licensing (LVL)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/252df8e5-bc05-4e25-b5f4-12216e2715bb.apks",
+    "filename": "252df8e5-bc05-4e25-b5f4-12216e2715bb.apks",
+    "file_type": "apks",
+    "file_size_mb": 192.43,
+    "package_name": "com.mustardgames.police.bike.stunt.mega.ramp.impossibletracks",
+    "app_name": "Parking Jam: Car Parking Games",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.J.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/1032988b-8270-4dbd-a3ea-91fbaa9fda2f.apks",
+    "filename": "1032988b-8270-4dbd-a3ea-91fbaa9fda2f.apks",
+    "file_type": "apks",
+    "file_size_mb": 77.24,
+    "package_name": "com.target.ui",
+    "app_name": "Target",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "AXML keepScreenOn=true in res/layout/activity_video_player.xml"
+      ],
+      "comment": "Android binary XML layout res/layout/activity_video_player.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/463a0145-fd4c-4e38-81a4-9ffd879255f2.apk",
+    "filename": "463a0145-fd4c-4e38-81a4-9ffd879255f2.apk",
+    "file_type": "apk",
+    "file_size_mb": 229.55,
+    "package_name": "com.tarboosh.collectemall",
+    "app_name": "Collect Em All!",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.B.<init>() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/d0de6413-ccde-43bd-8a75-aad59dc50962.apks",
+    "filename": "d0de6413-ccde-43bd-8a75-aad59dc50962.apks",
+    "file_type": "apks",
+    "file_size_mb": 157.4,
+    "package_name": "org.findmykids.app",
+    "app_name": "Findmykids",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "View.setKeepScreenOn(true)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "View.setKeepScreenOn(true)"
+      ],
+      "comment": "Raw DEX bytecode in qy5.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity qy5 \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in org.findmykids.base.mvp.mainactivity.MainActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity org.findmykids.base.mvp.mainactivity.MainActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in org.findmykids.app.newarch.activity.screencompatibility.VideoWatchActivity.onCreate() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity org.findmykids.app.newarch.activity.screencompatibility.VideoWatchActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in org.findmykids.app.newarch.screen.finishtaskscreen.WebTaskActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity org.findmykids.app.newarch.screen.finishtaskscreen.WebTaskActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in org.findmykids.appusage.parent.presentation.overlay.OverlayActivity.onCreate() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity org.findmykids.appusage.parent.presentation.overlay.OverlayActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/82e4eb45-a636-4fbc-966a-7fb294293f57.apk",
+    "filename": "82e4eb45-a636-4fbc-966a-7fb294293f57.apk",
+    "file_type": "apk",
+    "file_size_mb": 59.43,
+    "package_name": "net.flysher.rockncash",
+    "app_name": "RockNCash Casino Slot",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in org.cocos2dx.javascript.AppActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/7d940798-f58d-47ea-80ac-b6d5fb9eb8bb.apks",
+    "filename": "7d940798-f58d-47ea-80ac-b6d5fb9eb8bb.apks",
+    "file_type": "apks",
+    "file_size_mb": 94.03,
+    "package_name": "com.king.pyramidsolitairesaga",
+    "app_name": "Pyramid Solitaire Saga",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in com.king.main.EngineActivity.lambda$setKeepScreenOn$5() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Dalvik bytecode in com.king.main.EngineActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/69216dd3-c235-45d7-9c2c-97e5c269f680.apk",
+    "filename": "69216dd3-c235-45d7-9c2c-97e5c269f680.apk",
+    "file_type": "apk",
+    "file_size_mb": 73.5,
+    "package_name": "org.mozilla.focus",
+    "app_name": "Firefox Focus",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [],
+      "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": []
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/e4b13977-7997-4ab4-ba07-446d08022a44.apks",
+    "filename": "e4b13977-7997-4ab4-ba07-446d08022a44.apks",
+    "file_type": "apks",
+    "file_size_mb": 289.68,
+    "package_name": "com.block.juggle",
+    "app_name": "Block Blast!",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/4d928608-36b4-4b1b-93a6-c26a784292fb.apk",
+    "filename": "4d928608-36b4-4b1b-93a6-c26a784292fb.apk",
+    "file_type": "apk",
+    "file_size_mb": 53.73,
+    "package_name": "in.playsimple.word_up",
+    "app_name": "Word Trek",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in org.cocos2dx.javascript.AppActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/9f6c89a9-babc-4334-b995-621358517f15.apk",
+    "filename": "9f6c89a9-babc-4334-b995-621358517f15.apk",
+    "file_type": "apk",
+    "file_size_mb": 785.49,
+    "package_name": "com.yoozoo.jgame.us",
+    "app_name": "Echocalypse: Scarlet Covenant",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.youzu.h5sdklib.player.JCVideoPlayer.startVideo() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.youzu.h5sdklib.player.JCVideoPlayer \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/650cb086-fd99-46ee-be10-f23a2a060695.apk",
+    "filename": "650cb086-fd99-46ee-be10-f23a2a060695.apk",
+    "file_type": "apk",
+    "file_size_mb": 165.96,
+    "package_name": "com.opera.browser",
+    "app_name": "Opera",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "View.setKeepScreenOn(true)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.opera.android.media.PlayerContainerView.g() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.opera.android.media.PlayerContainerView \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.opera.android.qr.ScanQrCodeActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.opera.android.qr.ScanQrCodeActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/98ca7a2e-1c7b-4e36-813f-39e1e0ef9080.apks",
+    "filename": "98ca7a2e-1c7b-4e36-813f-39e1e0ef9080.apks",
+    "file_type": "apks",
+    "file_size_mb": 106.46,
+    "package_name": "com.yoogalabgaming.puzzle.sort.water",
+    "app_name": "Water Sort",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.U.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/4fe6b2a9-a726-4f4c-b4a3-c1b5bce2a648.apks",
+    "filename": "4fe6b2a9-a726-4f4c-b4a3-c1b5bce2a648.apks",
+    "file_type": "apks",
+    "file_size_mb": 131.53,
+    "package_name": "in.playsimple.wordsearch",
+    "app_name": "Word Search",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "View.setKeepScreenOn(true)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/49dbda0c-dc5c-496e-987a-3ca75dc4c70a.apks",
+    "filename": "49dbda0c-dc5c-496e-987a-3ca75dc4c70a.apks",
+    "file_type": "apks",
+    "file_size_mb": 41.36,
+    "package_name": "com.claro.pe.miclaro",
+    "app_name": "Mi Claro",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.veridiumid.sdk.authenticator.certificate.CertificateAuthenticatorActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.veridiumid.sdk.authenticator.certificate.CertificateAuthenticatorActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.veridiumid.sdk.fourf.FourFBiometricsActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.veridiumid.sdk.fourf.FourFBiometricsActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/478303e9-43e9-47d3-9d91-78c0a9d1caf7.apk",
+    "filename": "478303e9-43e9-47d3-9d91-78c0a9d1caf7.apk",
+    "file_type": "apk",
+    "file_size_mb": 63.78,
+    "package_name": "com.DawnGroveStudios.NeonSpire",
+    "app_name": "Neon Spire",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "low",
+      "needs_review": "Yes",
+      "vectors": [
+        "MediaPlayer.setScreenOnWhilePlaying(true)"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.p.c() invokes MediaPlayer.setScreenOnWhilePlaying() with matching constant in preceding 15-instruction window. | Note: Screen stays on during active media playback only. This is not a persistent screen hold \u2014 it only applies while video/audio is playing. | Unity sleepTimeout detected but intent unverifiable. To confirm: 1) Install the APK on a device, 2) Enter active gameplay (not just menus), 3) Wait 2+ minutes without touching the screen, 4) If screen stays on = wake lock confirmed, if screen dims = no wake lock.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock requires manual review"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/86c56fdd-c7d7-400f-acd0-bb8bdea559ae.apks",
+    "filename": "86c56fdd-c7d7-400f-acd0-bb8bdea559ae.apks",
+    "file_type": "apks",
+    "file_size_mb": 143.3,
+    "package_name": "com.skgames.trafficrider",
+    "app_name": "Traffic Rider",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.K.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/bb044ffe-bb99-40e6-a506-8483fd4e9b4b.apks",
+    "filename": "bb044ffe-bb99-40e6-a506-8483fd4e9b4b.apks",
+    "file_type": "apks",
+    "file_size_mb": 276.64,
+    "package_name": "com.champion.cubes",
+    "app_name": "Cubes Empire Champions",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "View.setKeepScreenOn(true)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.impl.ad.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.c() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/3aabdd0c-189a-409e-ba0c-ed20be11c043.apks",
+    "filename": "3aabdd0c-189a-409e-ba0c-ed20be11c043.apks",
+    "file_type": "apks",
+    "file_size_mb": 85.08,
+    "package_name": "math.puzzle.games.crossmath.number.puzzles.free",
+    "app_name": "Cross Math",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "View.setKeepScreenOn(true)",
+        "View.setKeepScreenOn(true)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.tradplus.crosspro.ui.PlayerView.initTextureView() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.tradplus.crosspro.ui.PlayerView \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/f1dcfb39-00d7-4170-8644-ec828ca1c082.apks",
+    "filename": "f1dcfb39-00d7-4170-8644-ec828ca1c082.apks",
+    "file_type": "apks",
+    "file_size_mb": 166.83,
+    "package_name": "io.randomco.travel",
+    "app_name": "Travel Town",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.U.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/97aa0076-998b-4c17-a501-f5ce21fd903f.apk",
+    "filename": "97aa0076-998b-4c17-a501-f5ce21fd903f.apk",
+    "file_type": "apk",
+    "file_size_mb": 116.27,
+    "package_name": "com.elex.coq.gp",
+    "app_name": "Clash of Queens",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in org.hcg.IF.IF.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/e457dc31-1642-4dfa-aab0-443d600e9a40.apks",
+    "filename": "e457dc31-1642-4dfa-aab0-443d600e9a40.apks",
+    "file_type": "apks",
+    "file_size_mb": 41.2,
+    "package_name": "com.move.realtor",
+    "app_name": "realtor.com",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [],
+      "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/986ef3c2-9c9d-4b98-8cce-7680c4762c13.apks",
+    "filename": "986ef3c2-9c9d-4b98-8cce-7680c4762c13.apks",
+    "file_type": "apks",
+    "file_size_mb": 190.7,
+    "package_name": "com.mobilityware.spider",
+    "app_name": "Spider",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.U.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/c614dc56-4b01-46dd-8995-20845fa05b58.apk",
+    "filename": "c614dc56-4b01-46dd-8995-20845fa05b58.apk",
+    "file_type": "apk",
+    "file_size_mb": 184.51,
+    "package_name": "com.audible.application",
+    "app_name": "Audible",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "PowerManager.newWakeLock(SCREEN_*)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "PowerManager.newWakeLock(SCREEN_*)",
+        "AXML keepScreenOn=true in res/layout/video_player_layout.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.audible.application.WakeLockHelper.c() contains invoke to PowerManager.newWakeLock with matching constant. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps. | Raw DEX bytecode in com.audible.application.feature.carmodeplayer.view.CarModePlayerFragment.onStart() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.audible.application.feature.carmodeplayer.view.CarModePlayerFragment \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.audible.application.feature.fullplayer.BrickCityPlayerFragment.onStart() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.audible.application.feature.fullplayer.BrickCityPlayerFragment \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.amazon.alexa.client.alexaservice.ui.core.UnlockDeviceActivity.onCreate() contains invoke to PowerManager.newWakeLock with matching constant. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps. | Android binary XML layout res/layout/video_player_layout.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/e68a3964-2509-4bc7-836f-7870dde809f6.apks",
+    "filename": "e68a3964-2509-4bc7-836f-7870dde809f6.apks",
+    "file_type": "apks",
+    "file_size_mb": 175.87,
+    "package_name": "mx.com.liverpool.shoppingapp",
+    "app_name": "Liverpool",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "View.setKeepScreenOn(true)",
+        "View.setKeepScreenOn(true)",
+        "View.setKeepScreenOn(true)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "PowerManager.newWakeLock(SCREEN_*)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/fragment_bottom_sheet_expandable.xml",
+        "AXML keepScreenOn=true in res/layout/fragment_digital_card.xml"
+      ],
+      "comment": "Raw DEX bytecode in com.bambuser.broadcaster.BroadcastPlayer$19.onStateChange() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.bambuser.broadcaster.BroadcastPlayer$19 \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.bambuser.broadcaster.BroadcastPlayer.setSurfaceView() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.bambuser.broadcaster.BroadcastPlayer \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.bambuser.broadcaster.BroadcastPlayer.setTextureView() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.bambuser.broadcaster.BroadcastPlayer \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.incode.welcome_sdk.ui.camera.CameraXActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.incode.welcome_sdk.ui.camera.CameraXActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.spr.messengerclient.react.module.callKit.CallActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.spr.messengerclient.react.module.callKit.CallActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.spr.messengerclient.react.module.callKit.CallActivity.onCreate() contains invoke to PowerManager.newWakeLock with matching constant. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps. | Raw DEX bytecode in io.card.payment.CardIOActivity.onResume() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity io.card.payment.CardIOActivity \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/fragment_bottom_sheet_expandable.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended. | Android binary XML layout res/layout/fragment_digital_card.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/62b0ab1a-fe46-4a9c-8727-6961b06b0c1f.apk",
+    "filename": "62b0ab1a-fe46-4a9c-8727-6961b06b0c1f.apk",
+    "file_type": "apk",
+    "file_size_mb": 32.02,
+    "package_name": "at.a1.android.iapp",
+    "app_name": "A1 Internet Optimizer",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in at.a1.android.iapp.features.netperform.multiStage.MultiStageSpeedtestActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity at.a1.android.iapp.features.netperform.multiStage.MultiStageSpeedtestActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in at.a1.android.iapp.features.netperform.singleStage.SingleStageSpeedtestActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity at.a1.android.iapp.features.netperform.singleStage.SingleStageSpeedtestActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in at.a1.android.iapp.features.nextBestAction.NextBestActionActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity at.a1.android.iapp.features.nextBestAction.NextBestActionActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.journeyapps.barcodescanner.CaptureActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.journeyapps.barcodescanner.CaptureActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/6fc1ca2c-4af9-40cf-875e-1e694844c953.apks",
+    "filename": "6fc1ca2c-4af9-40cf-875e-1e694844c953.apks",
+    "file_type": "apks",
+    "file_size_mb": 215.77,
+    "package_name": "com.pixelfederation.ts2",
+    "app_name": "TrainStation2",
+    "play_integrity": {
+      "verdict": "FAIL",
+      "fail_reasons": [
+        "Auto Protect (pairip)"
+      ],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.Y.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "FAIL",
+    "qa_notes": [
+      "Play Integrity FAIL: Auto Protect (pairip)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/7d9f4f3e-fb16-4bf2-9080-ca43813f86ce.apk",
+    "filename": "7d9f4f3e-fb16-4bf2-9080-ca43813f86ce.apk",
+    "file_type": "apk",
+    "file_size_mb": 120.26,
+    "package_name": "com.im.candychallenge3d",
+    "app_name": "Candy Challenge 3D",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "MediaPlayer.setScreenOnWhilePlaying(true)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.i.<init>() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Dalvik bytecode in com.unity3d.player.n.c() invokes MediaPlayer.setScreenOnWhilePlaying() with matching constant in preceding 15-instruction window. | Note: Screen stays on during active media playback only. This is not a persistent screen hold \u2014 it only applies while video/audio is playing. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/2968b262-5b3f-4d1b-b785-2cc80ee2a275.apks",
+    "filename": "2968b262-5b3f-4d1b-b785-2cc80ee2a275.apks",
+    "file_type": "apks",
+    "file_size_mb": 299.01,
+    "package_name": "com.youmusic.magictiles",
+    "app_name": "Magic Tiles 3",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.F.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/1c8b8118-17aa-4923-a68e-b7014c7568ee.apks",
+    "filename": "1c8b8118-17aa-4923-a68e-b7014c7568ee.apks",
+    "file_type": "apks",
+    "file_size_mb": 112.65,
+    "package_name": "com.tripledot.spider.solitaire.free.card.game",
+    "app_name": "Spider Solitaire",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.u.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": [
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/c586cfb0-0ebf-491b-83c1-5aef3ea652a8.apks",
+    "filename": "c586cfb0-0ebf-491b-83c1-5aef3ea652a8.apks",
+    "file_type": "apks",
+    "file_size_mb": 26.36,
+    "package_name": "com.tiktok.lite.go",
+    "app_name": "TikTok Lite",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "medium",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)"
+      ],
+      "comment": "Raw DEX bytecode in com.ss.android.ugc.aweme.creativetool.CreationActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.ss.android.ugc.aweme.creativetool.CreationActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.ss.android.ugc.aweme.mini_lobby.login.AuthorizeActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.ss.android.ugc.aweme.mini_lobby.login.AuthorizeActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (medium confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/7d4de7e1-89ce-4006-b155-b4a41c1e5e6e.apks",
+    "filename": "7d4de7e1-89ce-4006-b155-b4a41c1e5e6e.apks",
+    "file_type": "apks",
+    "file_size_mb": 132.49,
+    "package_name": "com.playvalve.dominoes",
+    "app_name": "Domino Legends",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.Y.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/37089293-aeaa-437b-adf1-2242dd3e5d05.apks",
+    "filename": "37089293-aeaa-437b-adf1-2242dd3e5d05.apks",
+    "file_type": "apks",
+    "file_size_mb": 288.92,
+    "package_name": "com.nar.zenmaster",
+    "app_name": "Zen Master",
+    "play_integrity": {
+      "verdict": "WARNING",
+      "fail_reasons": [],
+      "warning_reasons": [
+        "Play Integrity API"
+      ],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": true,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [
+        "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+        "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml"
+      ],
+      "comment": "Dalvik bytecode in com.unity3d.player.Y.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "WARNING",
+    "qa_notes": [
+      "Play Integrity WARNING: Play Integrity API",
+      "Wake Lock detected (high confidence)"
+    ]
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/0646ceda-d41a-4bdb-b1e2-2758795daad1.apks",
+    "filename": "0646ceda-d41a-4bdb-b1e2-2758795daad1.apks",
+    "file_type": "apks",
+    "file_size_mb": 579.44,
+    "package_name": "com.road7.ddtankbr.gp",
+    "app_name": "DDtank Origin",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "none",
+      "needs_review": "No",
+      "vectors": [
+        "Raw string 'keepScreenOn' in classes.dex"
+      ],
+      "comment": "All detections are from third-party ad SDKs (classes.dex), not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": []
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/1a058da0-df12-45c5-ac33-950e366c3b89.apk",
+    "filename": "1a058da0-df12-45c5-ac33-950e366c3b89.apk",
+    "file_type": "apk",
+    "file_size_mb": 46.3,
+    "package_name": "com.mizmowireless.acctmgt",
+    "app_name": "myCricket",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "none",
+      "needs_review": "No",
+      "vectors": [
+        "Raw string 'keepScreenOn' in classes1.dex"
+      ],
+      "comment": "All detections are from third-party ad SDKs (classes1.dex), not the app's own code. SDKs only keep screen on during video ad playback.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": []
+  },
+  {
+    "url": "https://whitelabel-cdn-prod.digitalturbine.com/files/fc6b45cb-d33e-40a0-aff1-888b3539b23e.apk",
+    "filename": "fc6b45cb-d33e-40a0-aff1-888b3539b23e.apk",
+    "file_type": "apk",
+    "file_size_mb": 27.95,
+    "package_name": "com.trivago",
+    "app_name": "trivago",
+    "play_integrity": {
+      "verdict": "PASS",
+      "fail_reasons": [],
+      "warning_reasons": [],
+      "error": null
+    },
+    "wake_lock": {
+      "detected": false,
+      "confidence": "high",
+      "needs_review": "No",
+      "vectors": [],
+      "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+      "error": null
+    },
+    "qa_verdict": "PASS",
+    "qa_notes": []
+  }
+]
