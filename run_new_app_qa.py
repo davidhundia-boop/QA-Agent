@@ -6,12 +6,9 @@ New App QA Script - Downloads and analyzes APKs from URLs for Play Integrity iss
 import os
 import sys
 import json
-import tempfile
-import shutil
 import zipfile
 import csv
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
@@ -104,7 +101,6 @@ def analyze_single_apk(url: str, index: int, total: int, output_dir: str) -> dic
     """Download and analyze a single APK/APKS file."""
     file_id = url.split('/')[-1]
     is_apks = url.endswith('.apks')
-    ext = '.apks' if is_apks else '.apk'
     local_path = os.path.join(output_dir, file_id)
     
     print(f"\n[{index}/{total}] Processing {file_id}...")
@@ -121,6 +117,8 @@ def analyze_single_apk(url: str, index: int, total: int, output_dir: str) -> dic
         "fail_reasons": [],
         "warning_reasons": [],
         "error": None,
+        "dex_string_count": 0,
+        "play_integrity_detected": False,
     }
     
     print(f"  Downloading...")
