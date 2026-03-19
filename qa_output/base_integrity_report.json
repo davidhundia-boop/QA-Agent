@@ -1,0 +1,31 @@
+{
+  "apk": "base.apk",
+  "package": "com.whitebit.android",
+  "app_name": "WhiteBIT",
+  "verdict": "WARNING",
+  "fail_count": 0,
+  "warning_count": 1,
+  "dex_string_count": 396226,
+  "extraction_errors": [],
+  "play_integrity_detected": true,
+  "details": {
+    "fail": [],
+    "warning": [
+      {
+        "id": "play_integrity_api",
+        "name": "Play Integrity API",
+        "evidence_count": 6,
+        "evidence": [
+          "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IRequestDialogCallback'",
+          "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/l;'",
+          "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+          "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+          "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+          "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+        ],
+        "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+      }
+    ]
+  },
+  "analyzed_at": "2026-03-18T20:13:29.729242"
+}
