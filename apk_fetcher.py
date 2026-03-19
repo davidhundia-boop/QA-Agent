@@ -1,9 +1,15 @@
 """
-APK Fetcher — downloads APKs from APKPure using the 'apkpure' pip package.
+APK Fetcher — downloads APKs via multiple fallback strategies.
 
-Install:  pip install apkpure requests beautifulsoup4 tqdm cloudscraper
+Install:  pip install apkpure requests beautifulsoup4 tqdm cloudscraper google-play-scraper
 
-No external binaries needed (no apkeep, no cargo, no Rust).
+Strategies (in order):
+  1. apkpure pip package — search by package name
+  2. apkpure pip package — search by app title (via google-play-scraper)
+  3. APKPure direct download URL (APK + XAPK)
+  4. APKPure page scrape with cloudscraper (Cloudflare bypass)
+  5. APKCombo page scrape
+  6. apkeep binary (if installed)
 """
 
 import os
@@ -49,7 +55,7 @@ def extract_package_name(input_str: str) -> str:
 def fetch_apk(package_name: str, output_dir: str = None) -> str:
     """
     Download the latest APK for the given package name.
-    Tries four strategies in order, falling back gracefully on each failure.
+    Tries six strategies in order, falling back gracefully on each failure.
 
     Returns the path to a usable .apk file (XAPK bundles are unpacked automatically).
     Raises RuntimeError with a full error log if all strategies fail.
@@ -124,7 +130,105 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
     except Exception as e:
         errors.append(f"direct URL: {e}")
 
-    # ── Strategy 4: apkeep binary (if installed) ────────────────────────
+    # ── Strategy 4: APKPure page scrape (cloudscraper for Cloudflare) ──
+    try:
+        import cloudscraper
+        from bs4 import BeautifulSoup
+
+        scraper = cloudscraper.create_scraper()
+
+        # Try the standard APKPure app page and look for a download link
+        page_url = f"https://apkpure.com/search?q={package_name}"
+        resp = scraper.get(page_url, timeout=30)
+        if resp.status_code == 200:
+            soup = BeautifulSoup(resp.text, "html.parser")
+            # Find the link to the app's detail page matching our package
+            app_link = soup.find("a", href=lambda h: h and package_name in h)
+            if app_link:
+                detail_url = app_link["href"]
+                if not detail_url.startswith("http"):
+                    detail_url = "https://apkpure.com" + detail_url
+
+                # Visit the download variant page
+                for suffix in ["/download", "/downloading"]:
+                    dl_page = scraper.get(detail_url + suffix, timeout=30)
+                    if dl_page.status_code == 200:
+                        dl_soup = BeautifulSoup(dl_page.text, "html.parser")
+                        dl_link = dl_soup.find(
+                            "a", href=lambda h: h and ("APK" in (h or "") or "download" in (h or "").lower()),
+                            id=lambda i: i and "download" in (i or "").lower(),
+                        )
+                        if not dl_link:
+                            dl_link = dl_soup.find("a", id="download_link")
+                        if not dl_link:
+                            dl_link = dl_soup.find(
+                                "a", attrs={"data-dt-apkid": package_name}
+                            )
+                        if dl_link and dl_link.get("href"):
+                            href = dl_link["href"]
+                            if not href.startswith("http"):
+                                href = "https://apkpure.com" + href
+                            file_resp = scraper.get(href, timeout=120, stream=True)
+                            ct = file_resp.headers.get("content-type", "")
+                            if file_resp.status_code == 200 and (
+                                "octet-stream" in ct or "application" in ct
+                            ):
+                                ext = ".xapk" if "xapk" in href.lower() else ".apk"
+                                out = os.path.join(output_dir, f"{package_name}_scraped{ext}")
+                                with open(out, "wb") as f:
+                                    for chunk in file_resp.iter_content(8192):
+                                        f.write(chunk)
+                                if os.path.getsize(out) > 1000:
+                                    return ensure_apk(out)
+                                else:
+                                    os.remove(out)
+    except ImportError:
+        errors.append("apkpure scrape: cloudscraper/bs4 not installed")
+    except Exception as e:
+        errors.append(f"apkpure scrape: {e}")
+
+    # ── Strategy 5: APKCombo direct download ────────────────────────────
+    try:
+        import cloudscraper
+
+        scraper = cloudscraper.create_scraper()
+        combo_url = f"https://apkcombo.com/downloader/?package={package_name}"
+        resp = scraper.get(combo_url, timeout=30)
+        if resp.status_code == 200:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(resp.text, "html.parser")
+            dl_links = soup.find_all("a", class_="variant")
+            if not dl_links:
+                dl_links = soup.find_all(
+                    "a", href=lambda h: h and package_name in (h or "") and ".apk" in (h or "")
+                )
+            for link in dl_links:
+                href = link.get("href", "")
+                if not href:
+                    continue
+                if not href.startswith("http"):
+                    href = "https://apkcombo.com" + href
+                file_resp = scraper.get(href, timeout=120, stream=True)
+                ct = file_resp.headers.get("content-type", "")
+                if file_resp.status_code == 200 and (
+                    "octet-stream" in ct or "application" in ct
+                ):
+                    ext = ".xapk" if "xapk" in href.lower() else ".apk"
+                    out = os.path.join(output_dir, f"{package_name}_combo{ext}")
+                    with open(out, "wb") as f:
+                        for chunk in file_resp.iter_content(8192):
+                            f.write(chunk)
+                    if os.path.getsize(out) > 1000:
+                        return ensure_apk(out)
+                    else:
+                        os.remove(out)
+                        continue
+    except ImportError:
+        errors.append("apkcombo: cloudscraper/bs4 not installed")
+    except Exception as e:
+        errors.append(f"apkcombo: {e}")
+
+    # ── Strategy 6: apkeep binary (if installed) ────────────────────────
     try:
         import subprocess
         result = subprocess.run(
@@ -141,11 +245,15 @@ def fetch_apk(package_name: str, output_dir: str = None) -> str:
         errors.append(f"apkeep: {e}")
 
     # ── All strategies failed ───────────────────────────────────────────
+    error_log = "; ".join(errors) if errors else "no strategies returned a valid APK"
     raise RuntimeError(
-        f"Could not download APK for '{package_name}'.\n"
-        f"Tried: {'; '.join(errors)}\n\n"
-        f"Download manually from https://apkpure.com/search?q={package_name} "
-        f"and use the file upload option."
+        f"Could not download APK for '{package_name}'. "
+        f"All download methods failed.\n"
+        f"Debug: {error_log}\n\n"
+        f"You can:\n"
+        f"1. Download manually from https://apkpure.com/search?q={package_name}\n"
+        f"2. Use the 'Upload APK' option below\n"
+        f"3. Install extra fetchers: pip install apkpure cloudscraper beautifulsoup4"
     )
 
 
