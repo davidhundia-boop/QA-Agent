@@ -30,6 +30,8 @@ import re
 import json
 import struct
 import io
+import tempfile
+import shutil
 from datetime import datetime
 
 if sys.stdout.encoding and sys.stdout.encoding.lower().replace('-', '') != 'utf8':
@@ -595,27 +597,97 @@ class PlayIntegrityAnalyzer:
 
 
 # ============================================================================
+# APKS BUNDLE SUPPORT
+# ============================================================================
+
+def extract_base_apk_from_apks(apks_path):
+    """Extract base.apk from an .apks bundle (split APK archive)."""
+    try:
+        with zipfile.ZipFile(apks_path, 'r') as zf:
+            names = zf.namelist()
+            base_apk_name = None
+            for name in names:
+                if name.endswith('base.apk'):
+                    base_apk_name = name
+                    break
+            if not base_apk_name:
+                return None, "No base.apk found in .apks bundle"
+            
+            temp_dir = tempfile.mkdtemp(prefix='apks_extract_')
+            extracted_path = zf.extract(base_apk_name, temp_dir)
+            return extracted_path, temp_dir
+    except Exception as e:
+        return None, str(e)
+
+
+# ============================================================================
 # BATCH PROCESSING
 # ============================================================================
 
 def analyze_directory(directory):
     apk_files = []
+    apks_files = []
     for root, dirs, files in os.walk(directory):
         for f in files:
+            full_path = os.path.join(root, f)
             if f.lower().endswith('.apk'):
-                apk_files.append(os.path.join(root, f))
+                apk_files.append(full_path)
+            elif f.lower().endswith('.apks'):
+                apks_files.append(full_path)
 
-    if not apk_files:
-        print(f"No APK files found in {directory}")
+    total_files = len(apk_files) + len(apks_files)
+    if total_files == 0:
+        print(f"No APK or APKS files found in {directory}")
         return
 
-    print(f"\nFound {len(apk_files)} APK(s) to analyze\n")
+    print(f"\nFound {len(apk_files)} APK(s) and {len(apks_files)} APKS bundle(s) to analyze\n")
 
     all_results = []
+    temp_dirs = []
+    
+    # Process regular .apk files
     for apk_path in sorted(apk_files):
         analyzer = PlayIntegrityAnalyzer(apk_path)
         analyzer.analyze()
         all_results.append(analyzer.to_json())
+    
+    # Process .apks bundles (extract base.apk and analyze)
+    for apks_path in sorted(apks_files):
+        apks_name = os.path.basename(apks_path)
+        base_apk_path, temp_dir_or_error = extract_base_apk_from_apks(apks_path)
+        
+        if base_apk_path is None:
+            print(f"\n{'='*70}")
+            print(f"  APKS Bundle: {apks_name}")
+            print(f"  ERROR: {temp_dir_or_error}")
+            print(f"{'='*70}\n")
+            all_results.append({
+                "apk": apks_name,
+                "package": "unknown",
+                "app_name": "unknown",
+                "verdict": "INCONCLUSIVE",
+                "fail_count": 0,
+                "warning_count": 0,
+                "dex_string_count": 0,
+                "extraction_errors": [temp_dir_or_error],
+                "play_integrity_detected": False,
+                "details": {"fail": [], "warning": []},
+                "analyzed_at": datetime.now().isoformat(),
+            })
+            continue
+        
+        temp_dirs.append(temp_dir_or_error)
+        analyzer = PlayIntegrityAnalyzer(base_apk_path)
+        analyzer.apk_name = apks_name  # Show original .apks filename
+        analyzer.analyze()
+        all_results.append(analyzer.to_json())
+    
+    # Clean up temp directories
+    for td in temp_dirs:
+        try:
+            shutil.rmtree(td)
+        except Exception:
+            pass
 
     counts = {v: sum(1 for r in all_results if r["verdict"] == v)
               for v in ("FAIL", "WARNING", "PASS", "INCONCLUSIVE")}
@@ -685,8 +757,32 @@ def main():
             with open(json_path, 'w') as f:
                 json.dump(analyzer.to_json(), f, indent=2)
             print(f"  JSON report saved to: {json_path}")
+    elif os.path.isfile(target) and target.lower().endswith('.apks'):
+        base_apk_path, temp_dir_or_error = extract_base_apk_from_apks(target)
+        if base_apk_path is None:
+            print(f"Error extracting base.apk from {target}: {temp_dir_or_error}")
+            sys.exit(1)
+        try:
+            analyzer = PlayIntegrityAnalyzer(base_apk_path)
+            analyzer.apk_name = os.path.basename(target)
+            analyzer.analyze()
+            json_path = target.rsplit('.', 1)[0] + '_integrity_report.json'
+            try:
+                with open(json_path, 'w') as f:
+                    json.dump(analyzer.to_json(), f, indent=2)
+                print(f"  JSON report saved to: {json_path}")
+            except Exception:
+                json_path = os.path.expanduser("~/play_integrity_report.json")
+                with open(json_path, 'w') as f:
+                    json.dump(analyzer.to_json(), f, indent=2)
+                print(f"  JSON report saved to: {json_path}")
+        finally:
+            try:
+                shutil.rmtree(temp_dir_or_error)
+            except Exception:
+                pass
     else:
-        print(f"Error: '{target}' is not a valid APK file or directory.")
+        print(f"Error: '{target}' is not a valid APK/APKS file or directory.")
         sys.exit(1)
 
 
