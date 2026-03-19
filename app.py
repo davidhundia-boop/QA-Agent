@@ -12,6 +12,7 @@ import tempfile
 import time
 
 import pandas as pd
+import requests
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -151,6 +152,22 @@ def analyze_apk_bytes(apk_bytes: bytes, label: str) -> dict:
             pass
 
 
+@st.cache_data(show_spinner=False)
+def cached_fetch_apk_bytes(package_name: str) -> bytes:
+    """
+    Download APK for *package_name* and return raw bytes.
+    Cached by Streamlit so repeat analyses skip the download entirely.
+    Raises RuntimeError (from fetch_apk) or requests timeout errors on failure.
+    """
+    tmp_dir = tempfile.mkdtemp(prefix="pi_cache_")
+    try:
+        apk_path = fetch_apk(package_name, tmp_dir)
+        with open(apk_path, "rb") as fh:
+            return fh.read()
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 def verdict_display(result: dict) -> dict:
     """Map an analyzer result to display metadata (css_class, color, messages)."""
     verdict = result.get("verdict", "ERROR")
@@ -273,6 +290,7 @@ st.caption("Check if an app will block DT preloads before you pitch")
 # ============================================================================
 
 st.session_state.setdefault("single_result", None)
+st.session_state.setdefault("single_last_pkg", None)   # clears result on new input
 st.session_state.setdefault("bulk_results", [])
 
 # ============================================================================
@@ -305,13 +323,28 @@ with tab_single:
 
     analyze_clicked = st.button("Analyze", type="primary", key="single_btn")
 
+    # Clear stale result when the user types a different package
+    if input_val.strip():
+        try:
+            _current_pkg = extract_package_name(input_val.strip())
+        except ValueError:
+            _current_pkg = input_val.strip()
+        if _current_pkg != st.session_state.single_last_pkg:
+            st.session_state.single_result = None
+
     if analyze_clicked:
         # ── Path A: uploaded APK ──────────────────────────────────────────
         if uploaded_apk is not None:
-            with st.spinner("Analyzing uploaded APK…"):
-                result = analyze_apk_bytes(uploaded_apk.read(), uploaded_apk.name)
-                result.setdefault("details", {})
-            st.session_state.single_result = result
+            try:
+                with st.status("Analyzing uploaded APK…", expanded=True) as status:
+                    status.update(label="Analyzing APK for integrity components…")
+                    result = analyze_apk_bytes(uploaded_apk.read(), uploaded_apk.name)
+                    result.setdefault("details", {})
+                    status.update(label="Analysis complete", state="complete")
+                st.session_state.single_result = result
+                st.session_state.single_last_pkg = uploaded_apk.name
+            except Exception as exc:
+                st.error(f"Analysis failed: {exc}")
 
         # ── Path B: URL / package name ────────────────────────────────────
         elif input_val.strip():
@@ -321,33 +354,46 @@ with tab_single:
                 st.error(str(exc))
                 st.stop()
 
-            result: dict = {"package": package_name}
+            result: dict = {"package": package_name, "details": {}}
 
-            with st.spinner("Fetching app metadata…"):
-                meta = get_app_metadata(package_name)
-                result["app_name"] = meta["title"]
-                result["icon"]     = meta.get("icon")
-
-            tmp_dir = tempfile.mkdtemp(prefix="pi_screener_")
             try:
-                with st.spinner(f"Downloading APK for **{meta['title']}**…"):
-                    apk_path = fetch_apk(package_name, tmp_dir)
+                with st.status("Starting analysis…", expanded=True) as status:
 
-                with st.spinner("Analyzing…"):
-                    analysis, _ = run_analyzer(apk_path)
+                    status.update(label="Fetching app metadata…")
+                    meta = get_app_metadata(package_name)
+                    result["app_name"] = meta["title"]
+                    result["icon"]     = meta.get("icon")
+
+                    status.update(label=f"Downloading APK for {meta['title']}…")
+                    try:
+                        apk_bytes = cached_fetch_apk_bytes(package_name)
+                    except requests.exceptions.Timeout:
+                        raise RuntimeError(
+                            "APK download timed out. Try again or use the file upload option."
+                        )
+                    except requests.exceptions.RequestException as exc:
+                        raise RuntimeError(f"APK download failed: {exc}")
+
+                    status.update(label="Analyzing APK for integrity components…")
+                    analysis = analyze_apk_bytes(apk_bytes, meta["title"])
                     result.update(analysis)
                     result["app_name"] = meta["title"]
                     result["icon"]     = meta.get("icon")
 
+                    status.update(label="Generating results…")
+                    # (formatting happens in render_result below)
+
+                    status.update(label="Analysis complete", state="complete")
+
+                st.session_state.single_result   = result
+                st.session_state.single_last_pkg = package_name
+
             except Exception as exc:
                 result["verdict"] = "ERROR"
                 result["error"]   = str(exc)
-                result.setdefault("details", {})
-
-            finally:
-                shutil.rmtree(tmp_dir, ignore_errors=True)
-
-            st.session_state.single_result = result
+                st.session_state.single_result   = result
+                st.session_state.single_last_pkg = package_name
+                st.error(f"Analysis failed: {exc}")
 
         else:
             st.warning("Enter a URL / package name, or upload an APK file.")
@@ -441,27 +487,44 @@ with tab_bulk:
                         "icon": None, "details": {},
                     }
                 else:
-                    tmp_dir = tempfile.mkdtemp(prefix="pi_screener_")
-                    try:
-                        meta     = get_app_metadata(pkg)
-                        apk_path = fetch_apk(pkg, tmp_dir)
-                        analysis, _ = run_analyzer(apk_path)
-                        r = dict(analysis)
-                        r.update({"input": original, "app_name": meta["title"],
-                                  "icon": meta.get("icon"), "package": pkg})
-                    except Exception as exc:
-                        meta = get_app_metadata(pkg) if pkg else {"title": original}
-                        r = {
-                            "input": original, "package": pkg or original,
-                            "app_name": meta["title"], "verdict": "ERROR",
-                            "error": str(exc), "icon": None, "details": {},
-                        }
-                    finally:
-                        shutil.rmtree(tmp_dir, ignore_errors=True)
+                    with slots[idx]:
+                        with st.status(f"Analyzing {label}…", expanded=False) as item_status:
+                            try:
+                                item_status.update(label=f"Fetching metadata for {label}…")
+                                meta = get_app_metadata(pkg)
+
+                                item_status.update(label=f"Downloading APK for {meta['title']}…")
+                                try:
+                                    apk_bytes = cached_fetch_apk_bytes(pkg)
+                                except requests.exceptions.Timeout:
+                                    raise RuntimeError(
+                                        "APK download timed out. Try the file upload option."
+                                    )
+                                except requests.exceptions.RequestException as exc:
+                                    raise RuntimeError(f"APK download failed: {exc}")
+
+                                item_status.update(label=f"Analyzing {meta['title']}…")
+                                analysis = analyze_apk_bytes(apk_bytes, meta["title"])
+                                r = dict(analysis)
+                                r.update({"input": original, "app_name": meta["title"],
+                                          "icon": meta.get("icon"), "package": pkg})
+
+                                item_status.update(
+                                    label=f"{meta['title']} — {r.get('verdict', '?')}",
+                                    state="complete",
+                                )
+                            except Exception as exc:
+                                meta = get_app_metadata(pkg) if pkg else {"title": original}
+                                r = {
+                                    "input": original, "package": pkg or original,
+                                    "app_name": meta["title"], "verdict": "ERROR",
+                                    "error": str(exc), "icon": None, "details": {},
+                                }
+                                item_status.update(label=f"{label} — ERROR", state="error")
 
                 results.append(r)
 
-                # Render this result immediately into its pre-allocated slot
+                # Render card below the status block in the same slot
                 with slots[idx]:
                     render_result(r)
 
