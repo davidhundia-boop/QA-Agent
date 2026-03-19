@@ -1,0 +1,163 @@
+{
+  "analysis_date": "2026-03-19",
+  "summary": {
+    "total_apks_analyzed": 125,
+    "wake_lock_detected_true": 17,
+    "wake_lock_detected_false": 108,
+    "errors": 0
+  },
+  "confidence_distribution": {
+    "high": 114,
+    "medium": 10,
+    "low": 0,
+    "none": 1
+  },
+  "flagged_by_tier": {
+    "tier_1_high_main_activity": 1,
+    "tier_2_high_game_engine": 6,
+    "tier_3_medium_secondary": 10
+  },
+  "manual_review_required": 0,
+  "flagged_apks": [
+    {
+      "package": "com.king.candycrushsaga",
+      "apk_file": "ba2ea026-2b75-4c7a-854c-51ba92dbfdb8.apk",
+      "confidence": "high",
+      "tier": 1,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.king.main.EngineActivity.lambda$setKeepScreenOn$5()"
+    },
+    {
+      "package": "com.gramgames.mergedragons",
+      "apk_file": "021dda5e-4b22-49e5-9dc7-de4473638995.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.U.a()"
+    },
+    {
+      "package": "com.moonactive.coinmaster",
+      "apk_file": "5cc58206-94c3-496a-978a-1ac03e5e4cde.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.K.a()"
+    },
+    {
+      "package": "com.tripledot.solitaire",
+      "apk_file": "1a10d199-12d0-4ec9-a630-563197cc13a9.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.W.a()"
+    },
+    {
+      "package": "com.unicostudio.braintest",
+      "apk_file": "681cd269-4f33-418a-9d6f-11b3431617f0.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.i.<init>()"
+    },
+    {
+      "package": "com.unicostudio.whois",
+      "apk_file": "d60d1c1d-a1c6-40f6-8209-2c779562ddde.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.K.a()"
+    },
+    {
+      "package": "in.playsimple.triple.tile.matchgame.pair.three.puzzle.object.royale",
+      "apk_file": "45cf4301-7fca-43d1-bb02-0adf5d19d4ca.apk",
+      "confidence": "high",
+      "tier": 2,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.player.Y.a()"
+    },
+    {
+      "package": "com.adfone.aditup",
+      "apk_file": "51eb5505-ab68-44c4-96ce-7d1cd1696e7a.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn()"
+    },
+    {
+      "package": "com.asurion.android.mediabackup.vault.cricket",
+      "apk_file": "d9aea0d4-874d-4dff-97e6-0e0b499710d7.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater.run()"
+    },
+    {
+      "package": "com.facebook.appmanager",
+      "apk_file": "32c5c004-e7ab-4bc9-89bc-b2a42739ee70.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "AXML keepScreenOn=true in res/layout/fragment_network_list.xml",
+      "found_in": "res/layout/fragment_network_list.xml"
+    },
+    {
+      "package": "com.facebook.katana",
+      "apk_file": "217908fc-a6be-4bd9-ae2a-60e1be1c5311.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity.onCreate()"
+    },
+    {
+      "package": "com.globalhitss.claro.pay",
+      "apk_file": "8da6d184-fba7-413a-90b3-70710a25ee34.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity.safeOnCreate()"
+    },
+    {
+      "package": "com.mizmowireless.vvm",
+      "apk_file": "f776cf54-0ad9-4182-af0d-27fcd368066f.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "PowerManager.newWakeLock(SCREEN_*)",
+      "found_in": "com.att.mobile.android.vvm.VVMApplication.onCreate()"
+    },
+    {
+      "package": "com.numbergames.linked2248.tile.numberpuzzle2048",
+      "apk_file": "cddfc1f7-4983-4861-9e35-77bde550f929.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn()"
+    },
+    {
+      "package": "com.pandora.android",
+      "apk_file": "2ee700ce-d17f-487d-b0a9-2371fe768d9f.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.pandora.android.activity.BaseFragmentActivity.onResume()"
+    },
+    {
+      "package": "in.playsimple.tripcross",
+      "apk_file": "4f0b16b2-bc5b-4eba-bb0a-ef5604af5f96.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn()"
+    },
+    {
+      "package": "in.playsimple.wordtrip",
+      "apk_file": "a0651a56-05cd-4999-bb0f-49e6ede8138b.apk",
+      "confidence": "medium",
+      "tier": 3,
+      "primary_detection": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in": "com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn()"
+    }
+  ],
+  "processing_stats": {
+    "total_time_seconds": 307.29,
+    "average_per_apk_seconds": 2.46
+  }
+}

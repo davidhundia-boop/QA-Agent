@@ -1,0 +1,2759 @@
+{
+  "apk_name": "021dda5e-4b22-49e5-9dc7-de4473638995.apk",
+  "package": "com.gramgames.mergedragons",
+  "main_activity": "com.gramgames.activity.UnityPlayerActivity",
+  "inheritance_chain": [
+    "com.gramgames.activity.UnityPlayerActivity",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.U",
+      "found_in_method": "a",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.U.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.U.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 161,
+  "total_classes_in_apk": 91032,
+  "time_taken_seconds": 10.1
+}
+{
+  "apk_name": "1a10d199-12d0-4ec9-a630-563197cc13a9.apk",
+  "package": "com.tripledot.solitaire",
+  "main_activity": "com.imagepicker.CustomUnityPlayerActivity",
+  "inheritance_chain": [
+    "com.imagepicker.CustomUnityPlayerActivity",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.W",
+      "found_in_method": "a",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.W.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.W.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 209,
+  "total_classes_in_apk": 69026,
+  "time_taken_seconds": 18.88
+}
+{
+  "apk_name": "217908fc-a6be-4bd9-ae2a-60e1be1c5311.apk",
+  "package": "com.facebook.katana",
+  "main_activity": "com.facebook.katana.LoginActivity",
+  "inheritance_chain": [],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity",
+      "found_in_method": "onCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.facebook.smartcapture.view.SelfieCaptureActivity",
+      "found_in_method": "onAttachedToWindow",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.facebook.smartcapture.view.SelfieCaptureActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.facebook.smartcapture.view.SelfieCaptureActivity.onAttachedToWindow() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.facebook.smartcapture.view.IdCaptureActivity",
+      "found_in_method": "onAttachedToWindow",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.facebook.smartcapture.view.IdCaptureActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.facebook.smartcapture.view.IdCaptureActivity.onAttachedToWindow() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.facebook.rooms.call.app.RoomActivity",
+      "found_in_method": "onActivityCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.facebook.rooms.call.app.RoomActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.facebook.rooms.call.app.RoomActivity.onActivityCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.facebook.rooms.mainapp.RoomIntermediateActivity",
+      "found_in_method": "onActivityCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.facebook.rooms.mainapp.RoomIntermediateActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.facebook.rooms.mainapp.RoomIntermediateActivity.onActivityCreate() contains invoke to Window.addFlags with matching constant."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.facebook.quicksilver.webviewprocess.QuicksilverWebViewActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.facebook.smartcapture.view.SelfieCaptureActivity.onAttachedToWindow() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.facebook.smartcapture.view.SelfieCaptureActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.facebook.smartcapture.view.IdCaptureActivity.onAttachedToWindow() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.facebook.smartcapture.view.IdCaptureActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.facebook.rooms.call.app.RoomActivity.onActivityCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.facebook.rooms.call.app.RoomActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.facebook.rooms.mainapp.RoomIntermediateActivity.onActivityCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.facebook.rooms.mainapp.RoomIntermediateActivity \u2014 may only apply to specific app screens, not the main experience.",
+  "classes_scanned": 1239,
+  "total_classes_in_apk": 161049,
+  "time_taken_seconds": 2.91
+}
+{
+  "apk_name": "25aea97d-0a80-40a1-9800-c2eb40e4da50.apk",
+  "package": "com.apple.android.music",
+  "main_activity": "com.apple.android.music.onboarding.activities.SplashActivity",
+  "inheritance_chain": [
+    "com.apple.android.music.onboarding.activities.SplashActivity",
+    "com.apple.android.music.common.activity.q",
+    "com.apple.android.music.common.activity.BaseActivity",
+    "e7.l",
+    "androidx.appcompat.app.e",
+    "androidx.fragment.app.r",
+    "androidx.activity.ComponentActivity"
+  ],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 702,
+  "total_classes_in_apk": 23179,
+  "time_taken_seconds": 2.36
+}
+{
+  "apk_name": "2b78b0e7-12df-42fb-8b53-0cb41cba30ff.apk",
+  "package": "com.starbucks.mobilecard",
+  "main_activity": "com.starbucks.mobilecard.main.activity.LandingPageActivity",
+  "inheritance_chain": [
+    "com.starbucks.mobilecard.main.activity.LandingPageActivity",
+    "androidx.fragment.app.FragmentActivity"
+  ],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 3966,
+  "total_classes_in_apk": 38300,
+  "time_taken_seconds": 7.67
+}
+{
+  "apk_name": "2ee700ce-d17f-487d-b0a9-2371fe768d9f.apk",
+  "package": "com.pandora.android",
+  "main_activity": "com.pandora.android.LauncherActivity",
+  "inheritance_chain": [
+    "com.pandora.android.LauncherActivity",
+    "androidx.appcompat.app.AppCompatActivity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.pandora.android.activity.BaseFragmentActivity",
+      "found_in_method": "onResume",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.pandora.android.activity.BaseFragmentActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.pandora.android.activity.BaseFragmentActivity.onResume() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.pandora.android.Main",
+      "found_in_method": "onCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.pandora.android.Main \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.pandora.android.Main.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.pandora.android.activity.MiniPlayerActivity",
+      "found_in_method": "onStart",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.pandora.android.activity.MiniPlayerActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.pandora.android.activity.MiniPlayerActivity.onStart() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/19.xml",
+      "found_in_class": "res/19.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/19.xml contains android:keepScreenOn=\"true\" attribute."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/Ji.xml",
+      "found_in_class": "res/Ji.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/Ji.xml contains android:keepScreenOn=\"true\" attribute."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/Kl1.xml",
+      "found_in_class": "res/Kl1.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/Kl1.xml contains android:keepScreenOn=\"true\" attribute."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/T7.xml",
+      "found_in_class": "res/T7.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/T7.xml contains android:keepScreenOn=\"true\" attribute."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/t-.xml",
+      "found_in_class": "res/t-.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/t-.xml contains android:keepScreenOn=\"true\" attribute."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.pandora.android.activity.BaseFragmentActivity.onResume() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.pandora.android.activity.BaseFragmentActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.pandora.android.Main.onCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.pandora.android.Main \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.pandora.android.activity.MiniPlayerActivity.onStart() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.pandora.android.activity.MiniPlayerActivity \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/19.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended. | Android binary XML layout res/Ji.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended. | Android binary XML layout res/Kl1.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended. | Android binary XML layout res/T7.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended. | Android binary XML layout res/t-.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+  "classes_scanned": 900,
+  "total_classes_in_apk": 92411,
+  "time_taken_seconds": 5.22
+}
+{
+  "apk_name": "32c5c004-e7ab-4bc9-89bc-b2a42739ee70.apk",
+  "package": "com.facebook.appmanager",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/fragment_network_list.xml",
+      "found_in_class": "res/layout/fragment_network_list.xml",
+      "found_in_method": "N/A",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+      "evidence": "Android binary XML layout res/layout/fragment_network_list.xml contains android:keepScreenOn=\"true\" attribute."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Android binary XML layout res/layout/fragment_network_list.xml contains android:keepScreenOn=\"true\" attribute. | Note: Layout attribute detected \u2014 could belong to app or an unfiltered SDK layout. Manual verification recommended.",
+  "classes_scanned": 121,
+  "total_classes_in_apk": 8298,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "45cf4301-7fca-43d1-bb02-0adf5d19d4ca.apk",
+  "package": "in.playsimple.triple.tile.matchgame.pair.three.puzzle.object.royale",
+  "main_activity": "in.playsimple.AppActivity",
+  "inheritance_chain": [
+    "in.playsimple.AppActivity",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.Y",
+      "found_in_method": "a",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.Y.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.Y.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 842,
+  "total_classes_in_apk": 78427,
+  "time_taken_seconds": 25.86
+}
+{
+  "apk_name": "4f0b16b2-bc5b-4eba-bb0a-ef5604af5f96.apk",
+  "package": "in.playsimple.tripcross",
+  "main_activity": "org.cocos2dx.javascript.AppActivity",
+  "inheritance_chain": [
+    "org.cocos2dx.javascript.AppActivity",
+    "org.cocos2dx.lib.Cocos2dxActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "io.bidmachine.nativead.view.VideoPlayerActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.ironsource.sdk.controller.ControllerActivity$c",
+      "found_in_method": "run",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.adview.AppLovinFullscreenActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.services.ads.adunit.AdUnitActivityController",
+      "found_in_method": "setKeepScreenOn",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "View.setKeepScreenOn(true)",
+      "found_in_class": "com.mbridge.msdk.nativex.view.MediaViewPlayerView",
+      "found_in_method": "j",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 2858,
+  "total_classes_in_apk": 89325,
+  "time_taken_seconds": 38.87
+}
+{
+  "apk_name": "51eb5505-ab68-44c4-96ce-7d1cd1696e7a.apk",
+  "package": "com.adfone.aditup",
+  "main_activity": "com.play2pay.Play",
+  "inheritance_chain": [],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.adview.AppLovinFullscreenActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "io.bidmachine.nativead.view.VideoPlayerActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.services.ads.adunit.AdUnitActivityController",
+      "found_in_method": "setKeepScreenOn",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+  "classes_scanned": 2600,
+  "total_classes_in_apk": 84938,
+  "time_taken_seconds": 1.74
+}
+{
+  "apk_name": "53d126cd-5f9d-4f2d-aef8-53e37ea9846b.apk",
+  "package": "com.breakingnewsbrief.app",
+  "main_activity": "com.newsflashlive.MainActivity",
+  "inheritance_chain": [
+    "com.newsflashlive.MainActivity",
+    "com.facebook.react.ReactActivity",
+    "androidx.appcompat.app.AppCompatActivity"
+  ],
+  "wake_lock_detected": false,
+  "confidence": "none",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.adview.AppLovinFullscreenActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    }
+  ],
+  "doubt_reasons": [
+    "All detections are from third-party advertising SDKs (e.g. Fyber, AppLovin, BidMachine, Mintegral), not the app's own code. Ad SDKs keep the screen on only during video ad playback."
+  ],
+  "manual_review_instructions": null,
+  "comment": "All detections are from third-party ad SDKs (com.applovin.adview.AppLovinFullscreenActivity), not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 850,
+  "total_classes_in_apk": 41782,
+  "time_taken_seconds": 12.18
+}
+{
+  "apk_name": "5cc58206-94c3-496a-978a-1ac03e5e4cde.apk",
+  "package": "com.moonactive.coinmaster",
+  "main_activity": "com.moon.coinmaster.android.GameActivity",
+  "inheritance_chain": [
+    "com.moon.coinmaster.android.GameActivity",
+    "com.androidnative.AndroidNativeBridge",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.K",
+      "found_in_method": "a",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.K.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.K.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+  "classes_scanned": 167,
+  "total_classes_in_apk": 35265,
+  "time_taken_seconds": 8.49
+}
+{
+  "apk_name": "681cd269-4f33-418a-9d6f-11b3431617f0.apk",
+  "package": "com.unicostudio.braintest",
+  "main_activity": "com.google.firebase.MessagingUnityPlayerActivity",
+  "inheritance_chain": [
+    "com.google.firebase.MessagingUnityPlayerActivity",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.i",
+      "found_in_method": "<init>",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.i.<init>() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "MediaPlayer.setScreenOnWhilePlaying(true)",
+      "found_in_class": "com.unity3d.player.n",
+      "found_in_method": "c",
+      "tier": 4,
+      "confidence": "low",
+      "note": "Screen stays on during active media playback only. This is not a persistent screen hold \u2014 it only applies while video/audio is playing.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.n.c() invokes MediaPlayer.setScreenOnWhilePlaying() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.i.<init>() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Dalvik bytecode in com.unity3d.player.n.c() invokes MediaPlayer.setScreenOnWhilePlaying() with matching constant in preceding 15-instruction window. | Note: Screen stays on during active media playback only. This is not a persistent screen hold \u2014 it only applies while video/audio is playing. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 139,
+  "total_classes_in_apk": 79765,
+  "time_taken_seconds": 23.12
+}
+{
+  "apk_name": "8da6d184-fba7-413a-90b3-70710a25ee34.apk",
+  "package": "com.globalhitss.claro.pay",
+  "main_activity": "com.globalhitss.claro.pay.ui.activities.SplashScreen",
+  "inheritance_chain": [
+    "com.globalhitss.claro.pay.ui.activities.SplashScreen",
+    "com.globalhitss.claro.pay.ui.activities.Hilt_SplashScreen",
+    "androidx.appcompat.app.AppCompatActivity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity",
+      "found_in_method": "safeOnCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.incode.welcome_sdk.ui.camera.CameraActivity",
+      "found_in_method": "safeOnCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.incode.welcome_sdk.ui.camera.CameraActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.incode.welcome_sdk.ui.camera.CameraActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.incode.welcome_sdk.ui.camera.CameraXActivity",
+      "found_in_method": "safeOnCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.incode.welcome_sdk.ui.camera.CameraXActivity \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.incode.welcome_sdk.ui.camera.CameraXActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.incode.welcome_sdk.ui.video_conference.VideoConferenceActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.incode.welcome_sdk.ui.camera.CameraActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.incode.welcome_sdk.ui.camera.CameraActivity \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.incode.welcome_sdk.ui.camera.CameraXActivity.safeOnCreate() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.incode.welcome_sdk.ui.camera.CameraXActivity \u2014 may only apply to specific app screens, not the main experience.",
+  "classes_scanned": 1534,
+  "total_classes_in_apk": 84745,
+  "time_taken_seconds": 11.46
+}
+{
+  "apk_name": "a0651a56-05cd-4999-bb0f-49e6ede8138b.apk",
+  "package": "in.playsimple.wordtrip",
+  "main_activity": "org.cocos2dx.javascript.AppActivity",
+  "inheritance_chain": [
+    "org.cocos2dx.javascript.AppActivity",
+    "org.cocos2dx.lib.Cocos2dxActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "io.bidmachine.nativead.view.VideoPlayerActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.ironsource.sdk.controller.ControllerActivity$c",
+      "found_in_method": "run",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.adview.AppLovinFullscreenActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.services.ads.adunit.AdUnitActivityController",
+      "found_in_method": "setKeepScreenOn",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "View.setKeepScreenOn(true)",
+      "found_in_class": "com.mbridge.msdk.nativex.view.MediaViewPlayerView",
+      "found_in_method": "j",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.FyberReportAdActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 4485,
+  "total_classes_in_apk": 101737,
+  "time_taken_seconds": 49.85
+}
+{
+  "apk_name": "ba2ea026-2b75-4c7a-854c-51ba92dbfdb8.apk",
+  "package": "com.king.candycrushsaga",
+  "main_activity": "com.king.candycrushsaga.CandyCrushSagaActivity",
+  "inheritance_chain": [
+    "com.king.candycrushsaga.CandyCrushSagaActivity",
+    "com.king.main.EngineActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.king.main.EngineActivity",
+      "found_in_method": "lambda$setKeepScreenOn$5",
+      "tier": 1,
+      "confidence": "high",
+      "note": null,
+      "evidence": "Dalvik bytecode in com.king.main.EngineActivity.lambda$setKeepScreenOn$5() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.king.main.EngineActivity",
+      "found_in_method": "onCreate",
+      "tier": 1,
+      "confidence": "high",
+      "note": null,
+      "evidence": "Dalvik bytecode in com.king.main.EngineActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.king.main.EngineActivity.lambda$setKeepScreenOn$5() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Dalvik bytecode in com.king.main.EngineActivity.onCreate() invokes Window.addFlags() with matching constant in preceding 15-instruction window.",
+  "classes_scanned": 2,
+  "total_classes_in_apk": 36956,
+  "time_taken_seconds": 2.32
+}
+{
+  "apk_name": "cddfc1f7-4983-4861-9e35-77bde550f929.apk",
+  "package": "com.numbergames.linked2248.tile.numberpuzzle2048",
+  "main_activity": "com.numbergames.linked2248.tile.numberpuzzle2048.MainActivity",
+  "inheritance_chain": [
+    "com.numbergames.linked2248.tile.numberpuzzle2048.MainActivity",
+    "io.flutter.embedding.android.FlutterActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.ironsource.sdk.controller.ControllerActivity$c",
+      "found_in_method": "run",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore",
+      "found_in_method": "initWindowFeatures",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.impl.ad",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.impl.ad.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.applovin.adview.AppLovinFullscreenActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "io.bidmachine.nativead.view.VideoPlayerActivity",
+      "found_in_method": "onCreate",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.services.ads.adunit.AdUnitActivityController",
+      "found_in_method": "setKeepScreenOn",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant."
+    },
+    {
+      "vector": "View.setKeepScreenOn(true)",
+      "found_in_class": "com.mbridge.msdk.nativex.view.MediaViewPlayerView",
+      "found_in_method": "j",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.ironsource.sdk.controller.ControllerActivity$c.run() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore.initWindowFeatures() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.impl.ad.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.applovin.adview.AppLovinFullscreenActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.fyber.inneractive.sdk.activities.InternalStoreWebpageActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in io.bidmachine.nativead.view.VideoPlayerActivity.onCreate() contains invoke to Window.addFlags with matching constant. | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback. | Raw DEX bytecode in com.unity3d.services.ads.adunit.AdUnitActivityController.setKeepScreenOn() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.unity3d.services.ads.adunit.AdUnitActivityController \u2014 may only apply to specific app screens, not the main experience. | Raw DEX bytecode in com.mbridge.msdk.nativex.view.MediaViewPlayerView.j() contains invoke to View.setKeepScreenOn with matching constant. | Note: Screen hold found in secondary activity com.mbridge.msdk.nativex.view.MediaViewPlayerView \u2014 may only apply to specific app screens, not the main experience. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 2812,
+  "total_classes_in_apk": 68960,
+  "time_taken_seconds": 34.58
+}
+{
+  "apk_name": "d60d1c1d-a1c6-40f6-8209-2c779562ddde.apk",
+  "package": "com.unicostudio.whois",
+  "main_activity": "com.google.firebase.MessagingUnityPlayerActivity",
+  "inheritance_chain": [
+    "com.google.firebase.MessagingUnityPlayerActivity",
+    "com.unity3d.player.UnityPlayerActivity",
+    "android.app.Activity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.unity3d.player.K",
+      "found_in_method": "a",
+      "tier": 2,
+      "confidence": "high",
+      "note": "Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback.",
+      "evidence": "Dalvik bytecode in com.unity3d.player.K.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window."
+    },
+    {
+      "vector": "AXML keepScreenOn=true in res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_class": "res/layout/mbridge_reward_videoview_item.xml",
+      "found_in_method": "N/A",
+      "tier": 5,
+      "confidence": "none",
+      "note": "All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+      "evidence": "Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout)."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Dalvik bytecode in com.unity3d.player.K.a() invokes Window.addFlags() with matching constant in preceding 15-instruction window. | Note: Game engine runtime class \u2014 functionally first-party. Unity/Unreal/etc. keep-screen-on is session-wide, not scoped to ad playback. | Android binary XML layout res/layout/mbridge_reward_videoview_item.xml contains android:keepScreenOn=\"true\" attribute (ad SDK layout). | Note: All detections are from third-party ad SDKs, not the app's own code. SDKs only keep screen on during video ad playback.",
+  "classes_scanned": 161,
+  "total_classes_in_apk": 56173,
+  "time_taken_seconds": 24.38
+}
+{
+  "apk_name": "d9aea0d4-874d-4dff-97e6-0e0b499710d7.apk",
+  "package": "com.asurion.android.mediabackup.vault.cricket",
+  "main_activity": "com.asurionphotos.MainActivity",
+  "inheritance_chain": [
+    "com.asurionphotos.MainActivity",
+    "com.facebook.react.ReactActivity",
+    "androidx.appcompat.app.AppCompatActivity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "Window.addFlags(FLAG_KEEP_SCREEN_ON)",
+      "found_in_class": "com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater",
+      "found_in_method": "run",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Screen hold found in secondary activity com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater \u2014 may only apply to specific app screens, not the main experience.",
+      "evidence": "Raw DEX bytecode in com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater.run() contains invoke to Window.addFlags with matching constant."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater.run() contains invoke to Window.addFlags with matching constant. | Note: Screen hold found in secondary activity com.brentvatne.exoplayer.FullScreenPlayerView$KeepScreenOnUpdater \u2014 may only apply to specific app screens, not the main experience.",
+  "classes_scanned": 1074,
+  "total_classes_in_apk": 36352,
+  "time_taken_seconds": 9.96
+}
+{
+  "apk_name": "f776cf54-0ad9-4182-af0d-27fcd368066f.apk",
+  "package": "com.mizmowireless.vvm",
+  "main_activity": "com.att.mobile.android.vvm.screen.WelcomeActivity",
+  "inheritance_chain": [
+    "com.att.mobile.android.vvm.screen.WelcomeActivity",
+    "com.att.mobile.android.vvm.screen.VVMActivity",
+    "d.b.c.j",
+    "d.l.b.p",
+    "androidx.activity.ComponentActivity"
+  ],
+  "wake_lock_detected": true,
+  "confidence": "medium",
+  "needs_manual_review": "No",
+  "flag_reasons": [
+    {
+      "vector": "PowerManager.newWakeLock(SCREEN_*)",
+      "found_in_class": "com.att.mobile.android.vvm.VVMApplication",
+      "found_in_method": "onCreate",
+      "tier": 3,
+      "confidence": "medium",
+      "note": "Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps.",
+      "evidence": "Raw DEX bytecode in com.att.mobile.android.vvm.VVMApplication.onCreate() contains invoke to PowerManager.newWakeLock with matching constant."
+    }
+  ],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "Raw DEX bytecode in com.att.mobile.android.vvm.VVMApplication.onCreate() contains invoke to PowerManager.newWakeLock with matching constant. | Note: Deprecated screen-level wake lock \u2014 functional but uncommon in modern apps.",
+  "classes_scanned": 66,
+  "total_classes_in_apk": 3052,
+  "time_taken_seconds": 0.42
+}
+{
+  "apk_name": "05ea7579-6478-4de3-aacb-5c9a46186dae.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.11
+}
+{
+  "apk_name": "06c8a82f-2fd7-4bf8-b7b3-95520967561b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "07c5223d-6036-4aa2-9756-885d933bf3b9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.01
+}
+{
+  "apk_name": "099239dc-9aa1-414a-8e36-ca27f8b7f3d0.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.05
+}
+{
+  "apk_name": "09e233df-dfd3-41e3-a553-deb28584cc67.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.03
+}
+{
+  "apk_name": "0b77c51b-6811-4df6-a6e7-c599a2b4e15f.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.15
+}
+{
+  "apk_name": "0cf4d867-1888-4740-8f7d-8865794333c4.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "0d2de3b3-17dd-43de-ab3e-eee495a649a0.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "0de9b2d6-4b7b-47d2-b831-55cf90e592ba.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "0e05d1fc-9e6a-485e-976e-8e25a888c47a.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.21
+}
+{
+  "apk_name": "135634e4-a4d6-470e-b351-121c061e1947.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.12
+}
+{
+  "apk_name": "165f88ce-892d-4e31-b5db-e5807452d5b0.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.03
+}
+{
+  "apk_name": "17c45bb8-2a35-46d1-ae53-9eb44fd81221.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "1859cae0-bf67-4ad2-88d1-de4b7c571e13.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.22
+}
+{
+  "apk_name": "240c60cd-4289-4f15-8d4b-b8fd482251da.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "252df8e5-bc05-4e25-b5f4-12216e2715bb.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.24
+}
+{
+  "apk_name": "25d2165f-641a-4001-bb4a-9513a6a9d67f.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "28119262-5966-439a-b9fa-a77f9d6b7e0c.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.19
+}
+{
+  "apk_name": "2b961683-b15b-40cb-a2cf-4c8a3fb93d87.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.01
+}
+{
+  "apk_name": "2d31fe01-8032-4a05-80e3-b3b055d5acb9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.01
+}
+{
+  "apk_name": "31ea92d2-5177-4ff0-8173-749971eea437.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.26
+}
+{
+  "apk_name": "32f8641d-3f8e-4f92-b982-17ac1296fae0.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "34f7c188-82b1-4012-bc27-93023b8bb5e2.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.26
+}
+{
+  "apk_name": "3960c1ca-2df4-4d03-8fc5-15baac45249c.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "3cb591c2-74ae-4b76-930e-89813ef1bb18.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.56
+}
+{
+  "apk_name": "3d099418-a4c0-45ce-8015-ebc1c7fd1584.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.33
+}
+{
+  "apk_name": "3fc1f1b7-2a13-46c4-ad5c-6ddc377c638b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.3
+}
+{
+  "apk_name": "42bbee74-fb37-464d-a20e-d287cd16da0b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.15
+}
+{
+  "apk_name": "42ecb325-efee-45dc-ba94-2cdde0119769.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "444cd206-f5cc-49fc-9cd3-1e7d018ab438.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.26
+}
+{
+  "apk_name": "45444325-20c3-40e1-86fa-b8f9af3b27aa.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.16
+}
+{
+  "apk_name": "454bed11-acfc-4a3d-b702-07f739cfc353.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.24
+}
+{
+  "apk_name": "46946d04-73ea-40f3-97b6-a230bc5a5d78.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.12
+}
+{
+  "apk_name": "46bcf92d-da1f-487a-b29b-9b88c53fd052.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "475a0e1f-9739-401c-bba7-f263e9ce6d18.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.06
+}
+{
+  "apk_name": "4e0a8e12-bfea-4e22-96ae-c797bfa55587.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.03
+}
+{
+  "apk_name": "4fd2f64f-7de8-4643-9cb5-de08a4b4df3b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.63
+}
+{
+  "apk_name": "50c27353-b406-40fe-b678-291688bb5d31.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.06
+}
+{
+  "apk_name": "513c6d42-fa76-411d-a302-d9c7cdf00785.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.17
+}
+{
+  "apk_name": "60b77d0f-3964-423c-963c-fb2fdcb3453e.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.27
+}
+{
+  "apk_name": "61965b5a-fd8b-4345-8b35-b606380023b9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.27
+}
+{
+  "apk_name": "6225b20b-f5c4-4826-baa1-280130670e55.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "63774e06-45ad-4df9-b482-5c1969566a96.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.13
+}
+{
+  "apk_name": "68de793e-e659-4bdc-83fb-9c0a3aecfad7.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.17
+}
+{
+  "apk_name": "6d546c33-36f8-4b84-85ba-2b7b3ca0755b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.23
+}
+{
+  "apk_name": "6e9e197e-9e83-4bed-967e-651aec7543ab.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "6f951183-10ed-4f05-9506-5c310aa0f15c.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.32
+}
+{
+  "apk_name": "6fe0b007-e032-470d-b1be-09d206be1088.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.06
+}
+{
+  "apk_name": "72510107-af06-49a0-bf9a-a3093c34bd67.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.3
+}
+{
+  "apk_name": "73d81777-c744-46be-ab47-5d97c06efa06.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.2
+}
+{
+  "apk_name": "74ed962f-a4cd-4501-be75-7bedb61963d9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "7710708c-c925-4613-b59a-a5576534bd48.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.28
+}
+{
+  "apk_name": "781d2dac-7b14-4b51-ab02-f2f56dc34082.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.12
+}
+{
+  "apk_name": "783cea60-cbee-4150-b9e6-20266ad7d8ee.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "7af08e4d-73c3-4862-abc7-2d55cb4134a3.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.17
+}
+{
+  "apk_name": "82d0bb3f-75a7-48fb-80b5-c3b5355f7566.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 1.14
+}
+{
+  "apk_name": "83c5a841-e53b-4c1c-9f3e-e23e826c2185.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "84b8f945-32d9-4454-b48e-b9a675a873ed.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "854ee11c-e4af-47f5-8c01-9c9af1e65743.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "863ecc3d-651f-458e-9e4d-cfb384244d8d.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.42
+}
+{
+  "apk_name": "870a3f47-9cdd-44d1-94b2-fade238e3bd6.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.12
+}
+{
+  "apk_name": "878bb722-f7cf-4c87-82fa-9e2afa23d0a7.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "887e4956-cd18-48c7-b4f9-106fda2d8850.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "898f1591-39a7-4c36-b674-e7f06ae4e923.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "91071faf-5fee-42b9-86de-dd21c01e65df.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "963e292d-63f5-40b8-8e52-18559087f52f.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.4
+}
+{
+  "apk_name": "964b6f56-36b4-4e9a-b82e-367a5f06db23.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.1
+}
+{
+  "apk_name": "999568d4-074a-410e-957d-1275bf1123ba.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "a5651b3f-afe3-40df-9e67-49edf9e84466.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.09
+}
+{
+  "apk_name": "a86e2677-b218-4e4c-a4ce-bf7d1b25e770.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "a9bbd758-dacf-4cc8-9194-2e714357b351.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.13
+}
+{
+  "apk_name": "aab92184-a015-48f9-88bf-3d9e0b4ba9cd.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "aac3f179-8f47-4d20-b6de-93cfa5a67bca.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.16
+}
+{
+  "apk_name": "ac568f8d-a4d7-475f-806a-27e45ea94661.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.23
+}
+{
+  "apk_name": "ae0337a0-6be7-4189-95b9-8c749f72f3f9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.11
+}
+{
+  "apk_name": "ae16f360-a693-4d62-8d29-679fffb3ad4f.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "af05ab4a-042c-40e8-8969-b39f0e0166d6.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.18
+}
+{
+  "apk_name": "b13b9ebe-54ba-433d-8f13-256177158136.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.24
+}
+{
+  "apk_name": "b5b383b5-f19d-43d9-bba9-21bc9d10810c.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.4
+}
+{
+  "apk_name": "bb044ffe-bb99-40e6-a506-8483fd4e9b4b.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.31
+}
+{
+  "apk_name": "bb58ed80-4780-433d-bfa6-49badbf3948d.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.05
+}
+{
+  "apk_name": "c43adc80-e620-4941-b71e-19260ad12186.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "c603d878-d59a-4d4c-94c6-ac40ff214853.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "c8951289-1074-4a64-9bda-20304b90bf40.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.02
+}
+{
+  "apk_name": "c9e2c0ce-d77d-4414-ac9c-34ab72db3ad9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.08
+}
+{
+  "apk_name": "ca01cc67-9263-480f-a564-8fb475df6286.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.13
+}
+{
+  "apk_name": "cbdf7c8b-4a9f-4794-9638-7b73433c5c29.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.15
+}
+{
+  "apk_name": "cdcedd2c-0efa-4361-9048-3f0b6d96fc45.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.09
+}
+{
+  "apk_name": "d636c98d-94cf-47ae-b816-82f561e92a43.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "d7e4c37b-e0b2-40eb-b2da-69f239ba688c.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.15
+}
+{
+  "apk_name": "da4fe19a-224a-44d6-bf98-3f1e3305605e.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "dedfd8c0-33af-4bd7-ac2b-27614dd1dfda.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.21
+}
+{
+  "apk_name": "e090ef4a-7c80-44f7-8c87-5ed6e08602df.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.12
+}
+{
+  "apk_name": "e4b13977-7997-4ab4-ba07-446d08022a44.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.28
+}
+{
+  "apk_name": "e54e140b-c037-40d9-a19d-58cbb5ba27ee.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.14
+}
+{
+  "apk_name": "e57b2ba4-03cc-4596-be75-cd910889939f.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.11
+}
+{
+  "apk_name": "e6756338-f99f-4ea3-8b86-a6409d2eed08.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "e6fcab1f-715b-4501-839b-c925f8aaf8b4.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.05
+}
+{
+  "apk_name": "e840dbf1-8d42-4f99-9d00-fd0d7c59d198.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "e87a6360-a74d-431e-a059-d278ddcc86f2.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.09
+}
+{
+  "apk_name": "ee1d1ee1-f06e-4e9d-af38-a387b6bb2989.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.07
+}
+{
+  "apk_name": "f3028d53-e5f9-4852-ab46-fb3865a263a9.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.1
+}
+{
+  "apk_name": "f490c065-469b-4db3-8ecd-942fb10874d4.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.04
+}
+{
+  "apk_name": "f49ccb7e-b682-45c1-ad9c-fe1307a315f1.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.4
+}
+{
+  "apk_name": "fd9edef6-2b91-47f0-8bb1-99c08c7e6df7.apks",
+  "package": "",
+  "main_activity": null,
+  "inheritance_chain": [],
+  "wake_lock_detected": false,
+  "confidence": "high",
+  "needs_manual_review": "No",
+  "flag_reasons": [],
+  "doubt_reasons": [],
+  "manual_review_instructions": null,
+  "comment": "No wake-lock patterns found in main activity chain, manifest activities, AXML layouts, or global string search.",
+  "classes_scanned": 0,
+  "total_classes_in_apk": 0,
+  "time_taken_seconds": 0.11
+}
