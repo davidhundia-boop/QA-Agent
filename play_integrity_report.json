@@ -1,0 +1,3043 @@
+[
+  {
+    "apk": "021dda5e-4b22-49e5-9dc7-de4473638995.apk",
+    "package": "com.gramgames.mergedragons",
+    "app_name": "Merge Dragons!",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 482243,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:39.450581"
+  },
+  {
+    "apk": "1a10d199-12d0-4ec9-a630-563197cc13a9.apk",
+    "package": "com.tripledot.solitaire",
+    "app_name": "Solitaire",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 269582,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:41.098140"
+  },
+  {
+    "apk": "217908fc-a6be-4bd9-ae2a-60e1be1c5311.apk",
+    "package": "com.facebook.katana",
+    "app_name": "Facebook",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 593450,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/IntegrityEr'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'IntegrityTokenResponse{token='"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:44.051829"
+  },
+  {
+    "apk": "25aea97d-0a80-40a1-9800-c2eb40e4da50.apk",
+    "package": "com.apple.android.music",
+    "app_name": "Apple Music",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 100086,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:45.276147"
+  },
+  {
+    "apk": "2b78b0e7-12df-42fb-8b53-0cb41cba30ff.apk",
+    "package": "com.starbucks.mobilecard",
+    "app_name": "Starbucks",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 122965,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:46.130197"
+  },
+  {
+    "apk": "2ee700ce-d17f-487d-b0a9-2371fe768d9f.apk",
+    "package": "com.pandora.android",
+    "app_name": "Pandora",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 375914,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:48.248239"
+  },
+  {
+    "apk": "32c5c004-e7ab-4bc9-89bc-b2a42739ee70.apk",
+    "package": "com.facebook.appmanager",
+    "app_name": "Meta App Manager",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 42715,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:48.566959"
+  },
+  {
+    "apk": "45cf4301-7fca-43d1-bb02-0adf5d19d4ca.apk",
+    "package": "in.playsimple.triple.tile.matchgame.pair.three.puzzle.object.royale",
+    "app_name": "1 TileMatch",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 333645,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:50.223064"
+  },
+  {
+    "apk": "4f0b16b2-bc5b-4eba-bb0a-ef5604af5f96.apk",
+    "package": "in.playsimple.tripcross",
+    "app_name": "4 Letters 1 Word",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 405388,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:52.226147"
+  },
+  {
+    "apk": "51eb5505-ab68-44c4-96ce-7d1cd1696e7a.apk",
+    "package": "com.adfone.aditup",
+    "app_name": "Ad It Up",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 367069,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:53.423003"
+  },
+  {
+    "apk": "53d126cd-5f9d-4f2d-aef8-53e37ea9846b.apk",
+    "package": "com.breakingnewsbrief.app",
+    "app_name": "Breaking News Brief",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 258355,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:54.764675"
+  },
+  {
+    "apk": "5cc58206-94c3-496a-978a-1ac03e5e4cde.apk",
+    "package": "com.moonactive.coinmaster",
+    "app_name": "Coin Master",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 183682,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:50:55.520953"
+  },
+  {
+    "apk": "681cd269-4f33-418a-9d6f-11b3431617f0.apk",
+    "package": "com.unicostudio.braintest",
+    "app_name": "Brain Test",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 377918,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:50:57.724212"
+  },
+  {
+    "apk": "8da6d184-fba7-413a-90b3-70710a25ee34.apk",
+    "package": "com.globalhitss.claro.pay",
+    "app_name": "Claro Pay",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 452139,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:00.392724"
+  },
+  {
+    "apk": "a0651a56-05cd-4999-bb0f-49e6ede8138b.apk",
+    "package": "in.playsimple.wordtrip",
+    "app_name": "2025 Word Trip",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 465674,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:03.029970"
+  },
+  {
+    "apk": "ba2ea026-2b75-4c7a-854c-51ba92dbfdb8.apk",
+    "package": "com.king.candycrushsaga",
+    "app_name": "Candy Crush Saga",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 185977,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:04.153186"
+  },
+  {
+    "apk": "cddfc1f7-4983-4861-9e35-77bde550f929.apk",
+    "package": "com.numbergames.linked2248.tile.numberpuzzle2048",
+    "app_name": "2248: Two Square",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 313040,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:05.897079"
+  },
+  {
+    "apk": "d60d1c1d-a1c6-40f6-8209-2c779562ddde.apk",
+    "package": "com.unicostudio.whois",
+    "app_name": "Who is?",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 309377,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:07.788959"
+  },
+  {
+    "apk": "d9aea0d4-874d-4dff-97e6-0e0b499710d7.apk",
+    "package": "com.asurion.android.mediabackup.vault.cricket",
+    "app_name": "myPhotoVault",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 241695,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:09.004253"
+  },
+  {
+    "apk": "f776cf54-0ad9-4182-af0d-27fcd368066f.apk",
+    "package": "com.mizmowireless.vvm",
+    "app_name": "Visual Voicemail",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 15069,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:09.159414"
+  },
+  {
+    "apk": "05ea7579-6478-4de3-aacb-5c9a46186dae.apks",
+    "package": "net.peakgames.toonblast",
+    "app_name": "Toon Blast",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 245607,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:11.018774"
+  },
+  {
+    "apk": "06c8a82f-2fd7-4bf8-b7b3-95520967561b.apks",
+    "package": "sorting.games.goods.sort.triple.match3d.puzzle.stuff",
+    "app_name": "Goods Puzzle: 3D Sorting Games",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 331527,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:12.753351"
+  },
+  {
+    "apk": "07c5223d-6036-4aa2-9756-885d933bf3b9.apks",
+    "package": "com.freecash.app2",
+    "app_name": "Freecash: Earn Money and Rewards",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 76307,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:13.074637"
+  },
+  {
+    "apk": "099239dc-9aa1-414a-8e36-ca27f8b7f3d0.apks",
+    "package": "com.staplegames.dice",
+    "app_name": "Merge",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 199031,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:14.058964"
+  },
+  {
+    "apk": "09e233df-dfd3-41e3-a553-deb28584cc67.apks",
+    "package": "all.documentreader.filereader.office.viewer",
+    "app_name": "All Document Reader",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 156714,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:15.012995"
+  },
+  {
+    "apk": "0b77c51b-6811-4df6-a6e7-c599a2b4e15f.apks",
+    "package": "com.RedLineGames.Game49",
+    "app_name": "Ice Cream Inc.",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 316529,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:17.331592"
+  },
+  {
+    "apk": "0cf4d867-1888-4740-8f7d-8865794333c4.apks",
+    "package": "bubble.shooter.exxtreme",
+    "app_name": "Bubble Shooter! Extreme",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 195633,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/a;'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:18.361335"
+  },
+  {
+    "apk": "0d2de3b3-17dd-43de-ab3e-eee495a649a0.apks",
+    "package": "solitaire.patience.card.games.klondike.free",
+    "app_name": "Solitaire",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 378523,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:20.246208"
+  },
+  {
+    "apk": "0de9b2d6-4b7b-47d2-b831-55cf90e592ba.apks",
+    "package": "com.acorns.android",
+    "app_name": "Acorns",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 278475,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 3,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/IntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:21.736961"
+  },
+  {
+    "apk": "0e05d1fc-9e6a-485e-976e-8e25a888c47a.apks",
+    "package": "com.plarium.raidlegends",
+    "app_name": "Raid",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 96332,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:22.481554"
+  },
+  {
+    "apk": "135634e4-a4d6-470e-b351-121c061e1947.apks",
+    "package": "com.shopee.br",
+    "app_name": "Shopee",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 391806,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/StandardInt'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:24.534786"
+  },
+  {
+    "apk": "165f88ce-892d-4e31-b5db-e5807452d5b0.apks",
+    "package": "com.dla.android",
+    "app_name": "Claro video",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 269517,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:25.684042"
+  },
+  {
+    "apk": "17c45bb8-2a35-46d1-ae53-9eb44fd81221.apks",
+    "package": "com.easybrain.hidden.spots",
+    "app_name": "Hidden Spots",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 360935,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:27.684996"
+  },
+  {
+    "apk": "1859cae0-bf67-4ad2-88d1-de4b7c571e13.apks",
+    "package": "com.snapchat.android",
+    "app_name": "Snapchat",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 278331,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/StandardInt'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:29.332165"
+  },
+  {
+    "apk": "240c60cd-4289-4f15-8d4b-b8fd482251da.apks",
+    "package": "com.callapp.contacts",
+    "app_name": "CallApp",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 339046,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:31.659816"
+  },
+  {
+    "apk": "252df8e5-bc05-4e25-b5f4-12216e2715bb.apks",
+    "package": "com.mustardgames.police.bike.stunt.mega.ramp.impossibletracks",
+    "app_name": "Parking Jam: Car Parking Games",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 361675,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:34.568409"
+  },
+  {
+    "apk": "25d2165f-641a-4001-bb4a-9513a6a9d67f.apks",
+    "package": "com.particlenews.newsbreaklite",
+    "app_name": "NewsBreak Lite",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 314173,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:36.148940"
+  },
+  {
+    "apk": "28119262-5966-439a-b9fa-a77f9d6b7e0c.apks",
+    "package": "com.scopely.monopolygo",
+    "app_name": "MONOPOLY GO",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 65689,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/j0;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:37.101959"
+  },
+  {
+    "apk": "2b961683-b15b-40cb-a2cf-4c8a3fb93d87.apks",
+    "package": "com.telcel.apps.unotv",
+    "app_name": "Uno TV",
+    "verdict": "FAIL",
+    "fail_count": 1,
+    "warning_count": 0,
+    "dex_string_count": 27534,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [
+        {
+          "id": "pairip_auto_protect",
+          "name": "Auto Protect (pairip)",
+          "evidence_count": 27,
+          "evidence": [
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseActivity$$ExternalSyntheticLambda1;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda0;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda1;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/ResponseValidator;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/ILicenseV2ResultListener$Stub;'",
+            "DEX: 'com/pairip' in '[Lcom/pairip/licensecheck/LicenseActivity$ActivityType;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$ImmediateTaskExecutor;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseActivity;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda7;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient;'"
+          ],
+          "description": "Google injects the pairip library at Play Console upload time. It blocks ALL non-Play installs including Digital Turbine. The developer must disable Auto Protection in Play Console and upload a new build."
+        }
+      ],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:37.276183"
+  },
+  {
+    "apk": "2d31fe01-8032-4a05-80e3-b3b055d5acb9.apks",
+    "package": "com.kwai.video",
+    "app_name": "Kwai",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 70071,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:37.679603"
+  },
+  {
+    "apk": "31ea92d2-5177-4ff0-8173-749971eea437.apks",
+    "package": "com.vitastudio.mahjong",
+    "app_name": "Vita Mahjong",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 418970,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:40.291842"
+  },
+  {
+    "apk": "32f8641d-3f8e-4f92-b982-17ac1296fae0.apks",
+    "package": "com.ilypuzzle.block",
+    "app_name": "Block Puzzle",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 201374,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/a;'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:41.273387"
+  },
+  {
+    "apk": "34f7c188-82b1-4012-bc27-93023b8bb5e2.apks",
+    "package": "io.state.fight",
+    "app_name": "State.io",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 445638,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:44.094048"
+  },
+  {
+    "apk": "3960c1ca-2df4-4d03-8fc5-15baac45249c.apks",
+    "package": "com.soulcompany.bubbleshooter.relaxing",
+    "app_name": "Bubble Shooter Relaxing",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 291700,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:45.601248"
+  },
+  {
+    "apk": "3cb591c2-74ae-4b76-930e-89813ef1bb18.apks",
+    "package": "com.weegoon.thiefpuzzle",
+    "app_name": "ThiefPuzzle",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 433202,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:51:48.747283"
+  },
+  {
+    "apk": "3d099418-a4c0-45ce-8015-ebc1c7fd1584.apks",
+    "package": "com.zhiliaoapp.musically",
+    "app_name": "TikTok",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 1202938,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/client/R$styleable;'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'IntegrityTokenResponse{token='"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:51:55.993117"
+  },
+  {
+    "apk": "3fc1f1b7-2a13-46c4-ad5c-6ddc377c638b.apks",
+    "package": "com.didiglobal.passenger",
+    "app_name": "DiDi",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 687626,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityManager;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:00.876223"
+  },
+  {
+    "apk": "42bbee74-fb37-464d-a20e-d287cd16da0b.apks",
+    "package": "find.difference.spot.differences.hidden.puzzle.games.free",
+    "app_name": "Find Differences",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 334167,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:02.573836"
+  },
+  {
+    "apk": "42ecb325-efee-45dc-ba94-2cdde0119769.apks",
+    "package": "wild.west.sniper",
+    "app_name": "Western Sniper",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 317298,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/x;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/IntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:04.631059"
+  },
+  {
+    "apk": "444cd206-f5cc-49fc-9cd3-1e7d018ab438.apks",
+    "package": "com.LoopGames.Domino",
+    "app_name": "Domino",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 384134,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:07.628086"
+  },
+  {
+    "apk": "45444325-20c3-40e1-86fa-b8f9af3b27aa.apks",
+    "package": "com.tricky.lines",
+    "app_name": "Tricky Line: Draw the Part",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 303359,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:09.927494"
+  },
+  {
+    "apk": "454bed11-acfc-4a3d-b702-07f739cfc353.apks",
+    "package": "com.easybrain.jigsaw.puzzles",
+    "app_name": "Jigsaw Puzzles",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 370918,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:12.101590"
+  },
+  {
+    "apk": "46946d04-73ea-40f3-97b6-a230bc5a5d78.apks",
+    "package": "com.unicostudio.braintest3",
+    "app_name": "Brain Test 3",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 338297,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:14.555500"
+  },
+  {
+    "apk": "46bcf92d-da1f-487a-b29b-9b88c53fd052.apks",
+    "package": "com.playnoob.homeflip",
+    "app_name": "Home Flip",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 340000,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:17.199963"
+  },
+  {
+    "apk": "475a0e1f-9739-401c-bba7-f263e9ce6d18.apks",
+    "package": "com.claro.claromusica.latam",
+    "app_name": "Claro m\u00fasica",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 331364,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:18.571925"
+  },
+  {
+    "apk": "4e0a8e12-bfea-4e22-96ae-c797bfa55587.apks",
+    "package": "com.zhiliaoapp.musically.go",
+    "app_name": "TikTok Lite",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 169047,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/IntegrityEr'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'IntegrityTokenResponse{token='"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:19.278431"
+  },
+  {
+    "apk": "4fd2f64f-7de8-4643-9cb5-de08a4b4df3b.apks",
+    "package": "com.playrix.homescapes",
+    "app_name": "Homescapes",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 55045,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityManagerFactory;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:20.312498"
+  },
+  {
+    "apk": "50c27353-b406-40fe-b678-291688bb5d31.apks",
+    "package": "com.kueski.os",
+    "app_name": "Kueski",
+    "verdict": "FAIL",
+    "fail_count": 1,
+    "warning_count": 1,
+    "dex_string_count": 97179,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [
+        {
+          "id": "pairip_auto_protect",
+          "name": "Auto Protect (pairip)",
+          "evidence_count": 43,
+          "evidence": [
+            "DEX: 'com/pairip' in '[Lcom/pairip/licensecheck/LicenseActivity$ActivityType;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda7;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$2;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/Utils;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/VmDecryptor;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient-IA;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/VMRunner$1;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$LicenseCheckState;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/SignatureCheck$SignatureTamperedException;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda5;'"
+          ],
+          "description": "Google injects the pairip library at Play Console upload time. It blocks ALL non-Play installs including Digital Turbine. The developer must disable Auto Protection in Play Console and upload a new build."
+        }
+      ],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/StandardInt'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:20.814471"
+  },
+  {
+    "apk": "513c6d42-fa76-411d-a302-d9c7cdf00785.apks",
+    "package": "dk.tactile.lilysgarden",
+    "app_name": "Lilys Garden",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 256501,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 5,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:22.684362"
+  },
+  {
+    "apk": "60b77d0f-3964-423c-963c-fb2fdcb3453e.apks",
+    "package": "net.peakgames.amy",
+    "app_name": "Toy Blast",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 341189,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:25.094810"
+  },
+  {
+    "apk": "61965b5a-fd8b-4345-8b35-b606380023b9.apks",
+    "package": "com.unicostudio.braintest2new",
+    "app_name": "Brain Test 2",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 425797,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:28.379797"
+  },
+  {
+    "apk": "6225b20b-f5c4-4826-baa1-280130670e55.apks",
+    "package": "com.staplegames.blocksClassicSGGP",
+    "app_name": "Blocks",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 213553,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:29.354099"
+  },
+  {
+    "apk": "63774e06-45ad-4df9-b482-5c1969566a96.apks",
+    "package": "com.wbd.stream",
+    "app_name": "HBO\u00a0Max",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 348421,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:31.564503"
+  },
+  {
+    "apk": "68de793e-e659-4bdc-83fb-9c0a3aecfad7.apks",
+    "package": "water.sort.puzzle.game.color.sorting.free",
+    "app_name": "Water Sort Puzzle",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 356249,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:33.749983"
+  },
+  {
+    "apk": "6d546c33-36f8-4b84-85ba-2b7b3ca0755b.apks",
+    "package": "com.blackout.bubble",
+    "app_name": "Bubble Rainbow",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 392784,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:37.141125"
+  },
+  {
+    "apk": "6e9e197e-9e83-4bed-967e-651aec7543ab.apks",
+    "package": "com.rbt.android",
+    "app_name": "Contestone",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 56219,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:37.384972"
+  },
+  {
+    "apk": "6f951183-10ed-4f05-9506-5c310aa0f15c.apks",
+    "package": "com.newpubco.klondikesolitaire",
+    "app_name": "Solitaire",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 408761,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:40.933683"
+  },
+  {
+    "apk": "6fe0b007-e032-470d-b1be-09d206be1088.apks",
+    "package": "com.pinterest",
+    "app_name": "Pinterest",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 199352,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:42.114357"
+  },
+  {
+    "apk": "72510107-af06-49a0-bf9a-a3093c34bd67.apks",
+    "package": "com.sport.cornhole",
+    "app_name": "Corn Hole League",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 387378,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:45.415029"
+  },
+  {
+    "apk": "73d81777-c744-46be-ab47-5d97c06efa06.apks",
+    "package": "com.games.bottle",
+    "app_name": "Bottle Jump 3D",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 349530,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:48.213344"
+  },
+  {
+    "apk": "74ed962f-a4cd-4501-be75-7bedb61963d9.apks",
+    "package": "com.amazon.mShop.android.shopping",
+    "app_name": "Amazon Shopping",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 400056,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:52:50.717168"
+  },
+  {
+    "apk": "7710708c-c925-4613-b59a-a5576534bd48.apks",
+    "package": "com.master.triple3d.find",
+    "app_name": "Triple Match",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 229914,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:51.790530"
+  },
+  {
+    "apk": "781d2dac-7b14-4b51-ab02-f2f56dc34082.apks",
+    "package": "com.amanotes.pamadancingroad",
+    "app_name": "Dancing Road",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 347171,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:53.841280"
+  },
+  {
+    "apk": "783cea60-cbee-4150-b9e6-20266ad7d8ee.apks",
+    "package": "com.telcel.imk",
+    "app_name": "Claro m\u00fasica",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 331364,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:55.586986"
+  },
+  {
+    "apk": "7af08e4d-73c3-4862-abc7-2d55cb4134a3.apks",
+    "package": "com.huuuge.casino.slots",
+    "app_name": "Huuuge Casino",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 267169,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:57.030643"
+  },
+  {
+    "apk": "82d0bb3f-75a7-48fb-80b5-c3b5355f7566.apks",
+    "package": "com.Seriously.BestFiends",
+    "app_name": "Best Fiends",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 269835,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:52:59.180221"
+  },
+  {
+    "apk": "83c5a841-e53b-4c1c-9f3e-e23e826c2185.apks",
+    "package": "net.supertreat.solitaire",
+    "app_name": "Solitaire",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 321711,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:01.319188"
+  },
+  {
+    "apk": "84b8f945-32d9-4454-b48e-b9a675a873ed.apks",
+    "package": "com.dreamgames.royalmatch",
+    "app_name": "Royal Match",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 39878,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 3,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/IntegrityEr'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:01.547625"
+  },
+  {
+    "apk": "854ee11c-e4af-47f5-8c01-9c9af1e65743.apks",
+    "package": "com.tripledot.tile.blossom",
+    "app_name": "Blossom Match",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 400418,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:04.246140"
+  },
+  {
+    "apk": "863ecc3d-651f-458e-9e4d-cfb384244d8d.apks",
+    "package": "air.com.playtika.slotomania",
+    "app_name": "Slotomania",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 310488,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:05.916812"
+  },
+  {
+    "apk": "870a3f47-9cdd-44d1-94b2-fade238e3bd6.apks",
+    "package": "com.onedebit.chime",
+    "app_name": "Chime",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 245653,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:07.161938"
+  },
+  {
+    "apk": "878bb722-f7cf-4c87-82fa-9e2afa23d0a7.apks",
+    "package": "com.blackout.word",
+    "app_name": "Word Search",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 384216,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:09.446090"
+  },
+  {
+    "apk": "887e4956-cd18-48c7-b4f9-106fda2d8850.apks",
+    "package": "com.fiogonia.mmm",
+    "app_name": "Match\u00b3",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 375704,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:11.650630"
+  },
+  {
+    "apk": "898f1591-39a7-4c36-b674-e7f06ae4e923.apks",
+    "package": "com.clarodrive.android",
+    "app_name": "Claro drive",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 124412,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:12.367589"
+  },
+  {
+    "apk": "91071faf-5fee-42b9-86de-dd21c01e65df.apks",
+    "package": "com.Trailmix.LoveAndPiesMerge",
+    "app_name": "Love & Pies",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 243625,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:14.125831"
+  },
+  {
+    "apk": "963e292d-63f5-40b8-8e52-18559087f52f.apks",
+    "package": "com.playrix.gardenscapes",
+    "app_name": "Gardenscapes",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 66169,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityManagerFactory;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:15.426327"
+  },
+  {
+    "apk": "964b6f56-36b4-4e9a-b82e-367a5f06db23.apks",
+    "package": "com.unicostudio.balltubes",
+    "app_name": "Woody Sort",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 244881,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:17.013106"
+  },
+  {
+    "apk": "999568d4-074a-410e-957d-1275bf1123ba.apks",
+    "package": "com.huub.tiger",
+    "app_name": "TheDaily",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 141110,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:17.629738"
+  },
+  {
+    "apk": "a5651b3f-afe3-40df-9e67-49edf9e84466.apks",
+    "package": "line.color.adventure",
+    "app_name": "Color Adventure",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 374095,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:19.689391"
+  },
+  {
+    "apk": "a86e2677-b218-4e4c-a4ce-bf7d1b25e770.apks",
+    "package": "com.gym.racegame",
+    "app_name": "Epic Race 3D",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 397380,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:21.899928"
+  },
+  {
+    "apk": "a9bbd758-dacf-4cc8-9194-2e714357b351.apks",
+    "package": "com.hit.master",
+    "app_name": "Hit Master 3D",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 398654,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:24.138637"
+  },
+  {
+    "apk": "aab92184-a015-48f9-88bf-3d9e0b4ba9cd.apks",
+    "package": "com.einnovation.temu",
+    "app_name": "Temu",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 137001,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/StandardInt'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:25.041445"
+  },
+  {
+    "apk": "aac3f179-8f47-4d20-b6de-93cfa5a67bca.apks",
+    "package": "com.bravestars.doll.dressup.princess.coloringgame",
+    "app_name": "Doll Dress Up: Sweet Girl",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 408780,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:28.449234"
+  },
+  {
+    "apk": "ac568f8d-a4d7-475f-806a-27e45ea94661.apks",
+    "package": "air.com.buffalo_studios.newflashbingo",
+    "app_name": "Bingo Blitz",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 237030,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:29.655258"
+  },
+  {
+    "apk": "ae0337a0-6be7-4189-95b9-8c749f72f3f9.apks",
+    "package": "com.king.candycrushsodasaga",
+    "app_name": "Candy Crush Soda",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 185333,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:31.374577"
+  },
+  {
+    "apk": "ae16f360-a693-4d62-8d29-679fffb3ad4f.apks",
+    "package": "funvent.tilepark",
+    "app_name": "Tile Park",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 293277,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:32.753913"
+  },
+  {
+    "apk": "af05ab4a-042c-40e8-8969-b39f0e0166d6.apks",
+    "package": "com.unicostudio.gemdoku",
+    "app_name": "Gemdoku",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 362686,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:35.335299"
+  },
+  {
+    "apk": "b13b9ebe-54ba-433d-8f13-256177158136.apks",
+    "package": "com.mobilityware.solitaire",
+    "app_name": "Solitaire",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 267517,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:36.745447"
+  },
+  {
+    "apk": "b5b383b5-f19d-43d9-bba9-21bc9d10810c.apks",
+    "package": "com.pacificinteractive.HouseOfFun",
+    "app_name": "House of Fun",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 306328,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:38.838012"
+  },
+  {
+    "apk": "bb044ffe-bb99-40e6-a506-8483fd4e9b4b.apks",
+    "package": "com.champion.cubes",
+    "app_name": "Cubes Empire Champions",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 195899,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 4,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/a;'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:40.553293"
+  },
+  {
+    "apk": "bb58ed80-4780-433d-bfa6-49badbf3948d.apks",
+    "package": "com.affinity.rewarded_play",
+    "app_name": "Rewarded Play",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 210584,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$StandardIntegrityTokenProvider;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:41.609529"
+  },
+  {
+    "apk": "c43adc80-e620-4941-b71e-19260ad12186.apks",
+    "package": "com.bubbleshooter.popbubbles.collectcards",
+    "app_name": "Bubble Shooter",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 302501,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:42.934659"
+  },
+  {
+    "apk": "c603d878-d59a-4d4c-94c6-ac40ff214853.apks",
+    "package": "com.particlenews.newsbreak",
+    "app_name": "NewsBreak",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 268105,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:44.297846"
+  },
+  {
+    "apk": "c8951289-1074-4a64-9bda-20304b90bf40.apks",
+    "package": "com.localweather.radar.climate",
+    "app_name": "\u00a0Local Weather",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 206023,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:45.476038"
+  },
+  {
+    "apk": "c9e2c0ce-d77d-4414-ac9c-34ab72db3ad9.apks",
+    "package": "net.zedge.android",
+    "app_name": "Zedge",
+    "verdict": "FAIL",
+    "fail_count": 1,
+    "warning_count": 1,
+    "dex_string_count": 327100,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [
+        {
+          "id": "pairip_auto_protect",
+          "name": "Auto Protect (pairip)",
+          "evidence_count": 40,
+          "evidence": [
+            "DEX: 'com/pairip' in '[Lcom/pairip/licensecheck/LicenseActivity$ActivityType;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/Utils;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseResponseHelper;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseContentProvider;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient$$ExternalSyntheticLambda6;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/StartupLauncher;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/SignatureCheck;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseActivity$ActivityType;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/licensecheck/LicenseClient-IA;'",
+            "DEX: 'com/pairip' in 'Lcom/pairip/SignatureCheck$SignatureTamperedException;'"
+          ],
+          "description": "Google injects the pairip library at Play Console upload time. It blocks ALL non-Play installs including Digital Turbine. The developer must disable Auto Protection in Play Console and upload a new build."
+        }
+      ],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 5,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'StandardIntegrityTokenRequest{requestHash='",
+            "DEX: 'StandardIntegrityManager' in 'The StandardIntegrityTokenProvider is invalid (e.g. it is outdated).\nRequest a new integrity token provider by calling S'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:47.129623"
+  },
+  {
+    "apk": "ca01cc67-9263-480f-a564-8fb475df6286.apks",
+    "package": "com.tripledot.woodoku",
+    "app_name": "Woodoku",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 298676,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:49.253619"
+  },
+  {
+    "apk": "cbdf7c8b-4a9f-4794-9638-7b73433c5c29.apks",
+    "package": "com.blackout.spades",
+    "app_name": "Spades",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 385508,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:51.701915"
+  },
+  {
+    "apk": "cdcedd2c-0efa-4361-9048-3f0b6d96fc45.apks",
+    "package": "com.gamovation.mahjongclub",
+    "app_name": "Mahjong Club",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 370433,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:54.130739"
+  },
+  {
+    "apk": "d636c98d-94cf-47ae-b816-82f561e92a43.apks",
+    "package": "com.qoni.guesstheiranswer",
+    "app_name": "Guess Their Answer",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 382557,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:53:56.756433"
+  },
+  {
+    "apk": "d7e4c37b-e0b2-40eb-b2da-69f239ba688c.apks",
+    "package": "com.playtika.wsop.gp",
+    "app_name": "WSOP",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 156676,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:53:58.167074"
+  },
+  {
+    "apk": "da4fe19a-224a-44d6-bf98-3f1e3305605e.apks",
+    "package": "brain.blow.quest",
+    "app_name": "Brain Blow",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 425128,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:00.685092"
+  },
+  {
+    "apk": "dedfd8c0-33af-4bd7-ac2b-27614dd1dfda.apks",
+    "package": "com.weplaydots.twodotsandroid",
+    "app_name": "Two Dots",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 365627,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:03.169460"
+  },
+  {
+    "apk": "e090ef4a-7c80-44f7-8c87-5ed6e08602df.apks",
+    "package": "com.pixel.art.coloring.color.number",
+    "app_name": "Happy Color",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 450088,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:06.559711"
+  },
+  {
+    "apk": "e4b13977-7997-4ab4-ba07-446d08022a44.apks",
+    "package": "com.block.juggle",
+    "app_name": "Block Blast!",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 382724,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:54:09.013955"
+  },
+  {
+    "apk": "e54e140b-c037-40d9-a19d-58cbb5ba27ee.apks",
+    "package": "com.playspare.watersort3d",
+    "app_name": "Color Water Sort 3D",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 473907,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:11.880303"
+  },
+  {
+    "apk": "e57b2ba4-03cc-4596-be75-cd910889939f.apks",
+    "package": "com.walmart.mg",
+    "app_name": "Walmart M\u00e9xico",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 544962,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:54:16.530177"
+  },
+  {
+    "apk": "e6756338-f99f-4ea3-8b86-a6409d2eed08.apks",
+    "package": "com.pdfreader.free.viewer.documentreader",
+    "app_name": "PDF Reader",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 173003,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:54:17.692366"
+  },
+  {
+    "apk": "e6fcab1f-715b-4501-839b-c925f8aaf8b4.apks",
+    "package": "com.creditkarma.mobile",
+    "app_name": "Credit Karma",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 259197,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 3,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback'",
+            "DEX: 'com/google/android/play/core/integrity' in ' (https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/integrity/model/IntegrityEr'",
+            "DEX: 'IntegrityTokenRequest' in 'IntegrityTokenRequest{nonce='"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:19.484944"
+  },
+  {
+    "apk": "e840dbf1-8d42-4f99-9d00-fd0d7c59d198.apks",
+    "package": "com.blockpuzzle.comboblastmaster.freegame",
+    "app_name": "ColorBlock",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 298084,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:20.942444"
+  },
+  {
+    "apk": "e87a6360-a74d-431e-a059-d278ddcc86f2.apks",
+    "package": "com.azurgames.stackball",
+    "app_name": "Stack Ball",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 352364,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:22.849515"
+  },
+  {
+    "apk": "ee1d1ee1-f06e-4e9d-af38-a387b6bb2989.apks",
+    "package": "games.spearmint.triplecrush",
+    "app_name": "Tiledom",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 212926,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:54:24.123898"
+  },
+  {
+    "apk": "f3028d53-e5f9-4852-ab46-fb3865a263a9.apks",
+    "package": "com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge",
+    "app_name": "Kotak811",
+    "verdict": "PASS",
+    "fail_count": 0,
+    "warning_count": 0,
+    "dex_string_count": 238014,
+    "extraction_errors": [],
+    "play_integrity_detected": false,
+    "details": {
+      "fail": [],
+      "warning": []
+    },
+    "analyzed_at": "2026-03-19T17:54:25.717562"
+  },
+  {
+    "apk": "f490c065-469b-4db3-8ecd-942fb10874d4.apks",
+    "package": "com.handmark.expressweather",
+    "app_name": "1Weather",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 317052,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:27.535210"
+  },
+  {
+    "apk": "f49ccb7e-b682-45c1-ad9c-fe1307a315f1.apks",
+    "package": "com.playrix.fishdomdd.gplay",
+    "app_name": "Fishdom",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 57296,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 2,
+          "evidence": [
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityManagerFactory;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:28.709407"
+  },
+  {
+    "apk": "fd9edef6-2b91-47f0-8bb1-99c08c7e6df7.apks",
+    "package": "ball.sort.puzzle.color.sorting.bubble.games",
+    "app_name": "Ball Sort Puzzle",
+    "verdict": "WARNING",
+    "fail_count": 0,
+    "warning_count": 1,
+    "dex_string_count": 329617,
+    "extraction_errors": [],
+    "play_integrity_detected": true,
+    "details": {
+      "fail": [],
+      "warning": [
+        {
+          "id": "play_integrity_api",
+          "name": "Play Integrity API",
+          "evidence_count": 6,
+          "evidence": [
+            "DEX: 'com.google.android.play.core.integrity' in 'com.google.android.play.core.integrity.protocol.IExpressIntegrityService'",
+            "DEX: 'com/google/android/play/core/integrity' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'",
+            "DEX: 'IntegrityTokenRequest' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityTokenResponse' in 'Lcom/google/android/play/core/integrity/IntegrityTokenResponse;'",
+            "DEX: 'StandardIntegrityManager' in 'Lcom/google/android/play/core/integrity/StandardIntegrityManager$PrepareIntegrityTokenRequest;'",
+            "DEX: 'IntegrityServiceException' in 'Lcom/google/android/play/core/integrity/IntegrityServiceException;'"
+          ],
+          "description": "App uses Play Integrity API. Cannot determine statically whether DT installs are permitted -- verdict handling is server-side. Requires one-time manual verification: confirm with the developer that KNOWN_ installers (including Digital Turbine) are allowed through."
+        }
+      ]
+    },
+    "analyzed_at": "2026-03-19T17:54:30.479145"
+  }
+]
