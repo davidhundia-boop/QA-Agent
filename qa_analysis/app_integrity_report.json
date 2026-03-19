@@ -1,0 +1,16 @@
+{
+  "apk": "app.apk",
+  "package": "com.topgamesinc.evony.flexion",
+  "app_name": "Evony",
+  "verdict": "PASS",
+  "fail_count": 0,
+  "warning_count": 0,
+  "dex_string_count": 180458,
+  "extraction_errors": [],
+  "play_integrity_detected": false,
+  "details": {
+    "fail": [],
+    "warning": []
+  },
+  "analyzed_at": "2026-03-17T20:34:07.820760"
+}
